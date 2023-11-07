@@ -1,0 +1,26 @@
+<div style="display: flex;flex-direction: column">
+    <div class="skill_section">
+        <p style="font-weight: bolder;" class="pink">front end</p>
+        <div style="display: flex;align-items: center;flex-wrap: wrap;">
+            <span *ngFor="let fe of skills?.frontend" class="light_text" [style.border]="'1px solid #1E2D3D'"><img height="27" width="27" [src]="fe.image" alt="image"> {{fe.name}}</span>
+        </div>
+    </div>
+    <div class="skill_section">
+        <p style="font-weight: bolder;" class="pink">back end</p>
+        <div style="display: flex;align-items: center;flex-wrap: wrap">
+            <span *ngFor="let be of skills?.backend" class="light_text" [style.border]="'1px solid #1E2D3D'"><img  height="27" width="27" [src]="be.image" alt="image"> {{be.name}}</span>
+        </div>
+    </div>
+    <div class="skill_section">
+        <p style="font-weight: bolder;" class="pink">Database</p>
+        <div style="display: flex;align-items: center;flex-wrap: wrap">
+            <span *ngFor="let database of skills?.database" class="light_text" [style.border]="'1px solid #1E2D3D'"><img height="27" width="27" [src]="database.image" alt="image"> {{database.name}}</span>
+        </div>
+    </div>
+    <div class="skill_section">
+        <p style="font-weight: bolder;" class="pink">Tools</p>
+        <div style="display: flex;align-items: center;flex-wrap: wrap">
+            <span *ngFor="let tool of skills?.tools" class="light_text" [style.border]="'1px solid #1E2D3D'"><img height="27" width="27" [src]="tool.image" alt="image"> {{tool.name}}</span>
+        </div>
+    </div>
+</div>

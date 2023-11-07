@@ -1,0 +1,33 @@
+<div class="project-section" [@fadeInOut]>
+    <div class="sidebar px-5" style="margin-right: 30px; ;">
+        <span class="py-3 w-100 project_title" style="white-space: nowrap;">Tech stack</span>
+            <p class="tech_head pt-3">Frontend</p>
+            <div class="techStackHead">
+                <div  class="w-100 techStack" *ngFor="let ts of techStack.frontend">
+                    <img height="27" width="27" class="me-1 my-2" [src]="ts.image" alt="image">
+                    <span class="light_text">{{ts.name}}</span>
+                </div>
+            </div>
+            <p class="tech_head pt-3">Backend</p>
+            <div class="techStackHead">
+                <div class=" techStack w-100" *ngFor="let ts of techStack.backend">
+                    <img height="27" width="27" class="me-1 my-2" [src]="ts.image" alt="image">
+                    <span class="light_text">{{ts.name}}</span>
+                </div>
+            </div>
+            <p class="tech_head pt-3">Database</p>
+            <div class="techStackHead">
+                <div class="techStack w-100" *ngFor="let ts of techStack.database">
+                    <img height="27" width="27" class="me-1 my-2" [src]="ts.image" alt="image">
+                    <span class="light_text">{{ts.name}}</span>
+                </div>
+            </div>
+    </div>
+    <div class="project_list w-100">
+        <div class="d-flex align-items-center justify-content-center"  style="flex-wrap: wrap;">
+            <div class="all_projects p-3" *ngFor="let project of allProjects let i = index">
+                <app-project [projectData]="project" [index]="i"></app-project>
+            </div>
+        </div>
+    </div>
+</div>

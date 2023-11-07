@@ -1,0 +1,75 @@
+<div class="hello" [@fadeInOut]>
+    <div class="content" style="max-width: 520px;">
+        <div class="my-details d-flex flex-column">
+            <span>Hi all , I am </span>
+            <span class="name">Mahammed Javid</span>
+            <span class="designation my-3">> FullStack developer</span>
+        </div>
+        <div class="code d-flex flex-column my-3">
+            <span class="comment">// I design , code and i love what i do.</span>
+            <span class="comment">// Explore about me and my skills in about section.</span>
+            <span class="my-3"><span class="keyWord">const</span><span class="variable ms-2">githubLink</span> = <span
+                    class="link ms-1">“<a class="link" target="_blank"
+                        [href]="github_link">{{github_link}}</a>”</span></span>
+        </div>
+    </div>
+    <div class="game">
+        <!-- <div style="position: relative;">
+            <img style="position: absolute; top: 30px; left: 0; z-index: -1;" src="../../../assets/images/Green.png" alt="">
+            <img style="position: absolute; bottom: 0; left: 0; z-index: -1;" src="../../../assets/images/Blue.png" alt="">
+        </div> -->
+        <div class="bolt d-flex justify-content-between">
+            <!-- Some game here -->
+            <div class="homepage p-3" *ngIf="!startagame">
+                <p class="game_title">Welcome to My Interactive Portfolio</p>
+                <p class="comment pt-2">// But wait, there's more! </p>
+                <p class="comment">// Test your skills and have fun.</p>
+
+                <div class="game-section py-3">
+                    <p class="game_title">Play a Game</p>
+                    <p class="comment pt-2">// Ready to challenge yourself? </p>
+                    <p class="comment">// Select a category to start</p>
+                    <div class="category-buttons pt-2">
+                        <ng-container *ngFor="let category of categoryList;let i= index">
+                            <button [ngClass]="{'selected' : category.selected }" class="category px-2 me-2 my-2"
+                                type="button" (click)="selectCategory(category)"><img *ngIf="category.selected"
+                                    src="../../../assets/icons/right.png" alt="">
+                                {{category.name}} </button>
+                        </ng-container>
+                    </div>
+                </div>
+                <button class="btn start_btn pt-2" (click)="startGame()">Start a game</button>
+            </div>
+
+
+
+            <!-- game -->
+            <div class="quiz p-3" *ngIf="startagame">
+                <p class="" style="max-width: 500px;">Question : <span class="link">{{actual_question?.question}}</span>
+                </p>
+                <p class="comment pt-2">// Category : {{actual_question?.category}}</p>
+                <div class="tags d-flex">
+                    <p class="tagscomment me-3">// Tags : </p>
+                    <span class="tag" *ngFor="let tag of actual_question?.tags">{{tag.name}}</span>
+                </div>
+                <div class="answer-options" style="max-width: 500px;">
+                    <p class="comment">// Select the below answer</p>
+                    <label *ngFor="let answer of actual_question?.answers_array; let i = index" class="option pt-2">
+                        <ng-container *ngIf="answer">
+                            <input [disabled]="isCorrectAnswer" type="checkbox" name="answer" class="answer-checkbox"
+                                (input)="answersForThequestion($event,actual_question,i)">
+                            <span
+                                [ngClass]="{'correct_answer' : isCorrectAnswer &&  actual_question.answer_index[i] == 'true'}">{{answer}}</span>
+                        </ng-container>
+                    </label>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                    <button [disabled]="!actual_question?.user_input?.length" class="btn submit pt-2 w-50 me-3 border-0"
+                        (click)="submitTheAnswer()">{{isCorrectAnswer ? "Try again?" : "Submit"}}</button>
+                    <span>{{isCorrectAnswer}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

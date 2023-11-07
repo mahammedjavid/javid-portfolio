@@ -1,0 +1,76 @@
+<div class="contact-section" [@fadeInOut]>
+    <div class="sidebar px-5" >
+        <span class="p-2 w-100 project_title text-center" style="white-space: nowrap;">Contact Info</span>
+        <div class="d-flex align-items-center justify-content-between ">
+            <img class="me-3 my-2" src="../../../assets/icons/phone.png" alt="">
+            <span class="light_text">+91 9964194276</span>
+        </div>
+        <div class="d-flex align-items-center justify-content-between">
+            <img class="me-3 my-2" src="../../../assets/icons/arrow_down.png" alt="">
+            <span class="light_text">mahammedjavid8@gmail.com</span>
+        </div>
+    </div>
+    <div class="second_section d-flex p-5 align-items-center justify-content-center w-100 " >
+        <form *ngIf="!messageSent"  class="contact-form w-75"  method="post" accept-charset="UTF-8" #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm)">
+            <section>
+                <label class="pb-2 light_text" for="name">_name : </label>
+                <input [(ngModel)]="contactFormData.name" required class="form-control w-75" type="text" name="name" id="name">
+            </section>
+            <section>
+                <label class="py-2 light_text" for="email">_email : </label>
+                <input [(ngModel)]="contactFormData.email" required class="form-control w-75" type="email" name="email" id="email">
+            </section>
+            <section>
+                <label class="py-2 light_text">message : </label>
+                <textarea [(ngModel)]="contactFormData.message" required name="message" class="form-control w-75"></textarea>
+            </section>
+            <button  type="submit" class="my-3 px-3 py-2 btn btn-sm send_message">Send message</button>
+            <div *ngIf="contactForm.submitted && contactForm.invalid" class="error-message">
+                Please fill out all fields.
+              </div>
+        </form>
+        <div *ngIf="messageSent" class="thankyou contact-form w-75">
+            <p>Thank you! 🤘</p>
+            <span class="light_text">Your message has been accepted , you will recieve answer really soon</span>
+            <button class="my-3 px-3 py-2 btn btn-sm send_message" (click)="sendMessageAgain()">send new message</button>
+        </div>
+        <div class="coding w-100" style="display: flex;align-items: center;">
+            <div class="line_numbers">
+                <p class="me-3 light_text">1</p>
+                <p class="me-3 light_text">2</p>
+                <p class="me-3 light_text">3</p>
+                <p class="me-3 light_text">4</p>
+                <p class="me-3 light_text">5</p>
+                <p class="me-3 light_text">6</p>
+                <p class="me-3 light_text">7</p>
+                <p class="me-3 light_text">8</p>
+                <p class="me-3 light_text">9</p>
+                <p class="me-3 light_text">10</p>
+            </div>
+            <div class="call_code w-100">
+                <p class="light_text"><span class="pink">const</span> <span class="purple ms-2">button</span> = <span
+                    class="purple">document</span><span class="light_text">.</span><span
+                    class="purple">querySelector</span>(<span class="orange">'#sendBtn'</span>);</p>
+            <p class="light_text"><span class="pink">const</span> <span class="purple ms-2">message</span> = <span
+                    class="light_text">{{open_curly_braces}}</span></p>
+            <p> <span class="purple"> name</span><span class="light_text">:</span> <span class="orange">"</span><span
+                    class="orange">{{contactFormData.name}}</span><span class="orange">"</span><span class="light_text">,</span></p>
+            <p> <span class="purple"> email</span><span class="light_text">:</span><span class="orange">"</span><span
+                    class="orange">{{contactFormData.email}}</span><span class="orange">"</span><span class="light_text">,</span></p>
+            <p> <span class="purple"> message</span><span class="light_text">:</span> <span class="orange">"</span><span
+                    class="orange" style="word-break: break-all;">{{contactFormData.message}}</span><span class="orange">"</span><span class="light_text">,</span>
+            </p>
+            <p> <span class="purple"> date</span><span class="light_text">:</span><span class="orange">"</span><span
+                    class="orange">{{contactFormData.date}}</span><span class="orange">"</span></p>
+            <p class="light_text">{{close_curly_braces}}</p>
+            <p><span class="purple">button</span><span class="light_text">.</span><span
+                    class="purple">addEventListener</span><span class="light_text">{{openBraces}}</span><span
+                    class="orange">'click'</span><span class="light_text">, ()</span> <span class="purple">=></span>
+                <span class="light_text">{{open_curly_braces}}</span></p>
+            <p class="light_text"><span class="purple">form</span><span class="light_text">.</span> <span
+                    class="purple">send</span>(<span class="purple">message</span>);</p>
+            <p class="light_text">{{close_curly_braces+closeBraces}}</p>
+            </div>
+        </div>
+    </div>
+</div>

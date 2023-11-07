@@ -1,0 +1,273 @@
+<div class="about-section" [@fadeInOut]>
+    <div class="sidebar p-2 ">
+        <span class="p-2 w-100 project_title text-center" style="white-space: nowrap">all about me</span>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" [attr.aria-expanded]="dynamicFolderOpen.bio"
+                        aria-controls="collapseOne">
+                        <div class="flex align-items-center">
+                            <img class="me-2 rotate" src="../../../assets/images/vector_right_arrow.png"
+                                alt="img" /><img class="me-2" src="../../../assets/images/folder_1.png"
+                                alt="" /><span>bio</span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" [ngClass]="{ show: dynamicFolderOpen.bio }"
+                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body p-0">
+                        <ul style="list-style: none" class="ms-1 mb-0">
+                            <li [ngClass]="{ active: selectedSubNavItem == 'personal-info' }"
+                                (click)="selectNavItem('personal-info')" class="light_text my-1 file_name">
+                                <img class="me-2" src="../../../assets/images/file.png" alt="" />personal.ts
+                            </li>
+                            <li [ngClass]="{ active: selectedSubNavItem == 'summary' }"
+                                (click)="selectNavItem('summary')" class="light_text my-1 file_name">
+                                <img class="me-2" src="../../../assets/images/file.png" alt="" />summary.ts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fourth item -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive" [attr.aria-expanded]="dynamicFolderOpen.experience"
+                        aria-controls="collapseFive">
+                        <div class="flex align-items-center">
+                            <img class="me-2 rotate" src="../../../assets/images/vector_right_arrow.png"
+                                alt="img" /><img class="me-2" src="../../../assets/images/folder_3.png"
+                                alt="" /><span>experience</span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse"
+                    [ngClass]="{ show: dynamicFolderOpen.experience }" aria-labelledby="headingFive"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body p-0">
+                        <ul style="list-style: none" class="ms-1">
+                            <li [ngClass]="{ active: selectedSubNavItem == 'experience' }"
+                                (click)="selectNavItem('experience')" class="light_text my-1 file_name">
+                                <img class="me-2" src="../../../assets/images/file.png" alt="" />experience.ts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- second item -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" [attr.aria-expanded]="dynamicFolderOpen.achivement"
+                        aria-controls="collapseTwo">
+                        <div class="flex align-items-center">
+                            <img class="me-2 rotate" src="../../../assets/images/vector_right_arrow.png"
+                                alt="img" /><img class="me-2" src="../../../assets/images/folder_2.png"
+                                alt="" /><span>achivements</span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse"
+                    [ngClass]="{ 'show': dynamicFolderOpen.achivement }" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body p-0">
+                        <ul style="list-style: none" class="ms-1 mb-0">
+                            <li [ngClass]="{ active: selectedSubNavItem == 'achivement' }"
+                                (click)="selectNavItem('achivement')" class="light_text my-1 file_name">
+                                <img class="me-2" src="../../../assets/images/file.png" alt="" />achivement.ts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- third item -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" [attr.aria-expanded]="dynamicFolderOpen.interest"
+                        aria-controls="collapseThree">
+                        <div class="flex align-items-center">
+                            <img class="me-2 rotate" src="../../../assets/images/vector_right_arrow.png"
+                                alt="img" /><img class="me-2" src="../../../assets/images/folder_3.png"
+                                alt="" /><span>interest</span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse"
+                    [ngClass]="{ 'show': dynamicFolderOpen.interest }" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body p-0">
+                        <ul style="list-style: none" class="ms-1">
+                            <li [ngClass]="{ active: selectedSubNavItem == 'interest' }"
+                                (click)="selectNavItem('interest')" class="light_text my-1">
+                                <img class="me-2" src="../../../assets/images/file.png" alt="" />interest.ts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fourth item -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" [attr.aria-expanded]="dynamicFolderOpen.education"
+                        aria-controls="collapseFour">
+                        <div class="flex align-items-center">
+                            <img class="me-2 rotate" src="../../../assets/images/vector_right_arrow.png"
+                                alt="img" /><img class="me-2" src="../../../assets/images/folder_2.png"
+                                alt="" /><span>education</span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse"
+                    [ngClass]="{ 'show': dynamicFolderOpen.education }" aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body p-0">
+                        <ul style="list-style: none" class="ms-1">
+                            <li [ngClass]="{ active: selectedSubNavItem == 'education' }"
+                                (click)="selectNavItem('education')" class="light_text my-1">
+                                <img class="me-2" src="../../../assets/images/file.png" alt="" />education.ts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- sixth item -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix" [attr.aria-expanded]="dynamicFolderOpen.skills"
+                        aria-controls="collapseSix">
+                        <div class="flex align-items-center">
+                            <img class="me-2 rotate" src="../../../assets/images/vector_right_arrow.png"
+                                alt="img" /><img class="me-2" src="../../../assets/images/folder_2.png"
+                                alt="" /><span>skills</span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse"
+                    [ngClass]="{ 'show': dynamicFolderOpen.skills }" aria-labelledby="headingSix"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body p-0">
+                        <ul style="list-style: none" class="ms-1">
+                            <li [ngClass]="{ active: selectedSubNavItem == 'skills' }" (click)="selectNavItem('skills')"
+                                class="light_text my-1">
+                                <img class="me-2" src="../../../assets/images/file.png" alt="" />skills.ts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="second_section d-flex p-5 w-100 align-items-baseline" style="justify-content: space-around">
+        <div class="about_section w-100 me-5 pe-3" style="height: 80vh;overflow-y: scroll;">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="underline">
+
+        </div>
+        <div class="coding w-100">
+            <div class="user_one">
+                <p class="light_text">// Code snippet showcase:</p>
+
+                <div class="user" style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          ">
+                    <div style="display: flex; align-items: center" class="my-3">
+                        <img src="../../../assets/images//user image 2.png" alt="" style="border-radius: 50%" />
+                        <div style="
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+              " class="ms-3">
+                            <span class="purple">@mahammedJavid7</span>
+                            <span class="light_text small_for_mob">Created 5 months ago</span>
+                        </div>
+                    </div>
+                    <div class="details_and_star" style="display: flex; align-items: center">
+                        <span class="mx-2 light_text small_for_mob"><img src="../../../assets/images/details.png" alt="details" />
+                            details</span>
+                        <span class="mx-2 light_text small_for_mob"><img src="../../../assets/images/star.png" alt="star" />
+                            star</span>
+                    </div>
+                </div>
+                <div class="code p-3">
+                    <div class="bio">
+                        <p class="light_text">
+                            <span class="pink">function</span>
+                            <span class="purple ms-2">{{ DummyFunctionName }}</span>
+                            <span class="light_text">{{ openBraces }}</span><span class="light_text">{{ closeBraces
+                                }}</span><span class="light_text">{{ open_curly_braces }}</span>
+                        </p>
+                        <p class="light_text">
+                            <span class="pink">const</span>
+                            <span class="purple ms-2">{{ DummyFunctionName }}</span>
+                            <span class="light_text"> = </span>
+                            <span class="orange">this.apiService.{{ DummyFunctionName
+                                }}<span class="light_text">{{ openBraces }}</span><span class="light_text">{{
+                                    closeBraces }}</span></span><span class="light_text">;</span>
+                        </p>
+                        <p class="light_text">{{ close_curly_braces }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="user_two mt-3">
+                <div class="user" style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          ">
+                    <div style="display: flex; align-items: center" class="my-3">
+                        <img src="../../../assets/images//user image 2.png" alt="" style="border-radius: 50%" />
+                        <div style="
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+              " class="ms-3">
+                            <span class="purple">@mahammedJavid7</span>
+                            <span class="light_text small_for_mob">Created 7 months ago</span>
+                        </div>
+                    </div>
+                    <div class="details_and_star" style="display: flex; align-items: center">
+                        <span class="mx-2 light_text small_for_mob"><img src="../../../assets/images/details.png" alt="details" />
+                            details</span>
+                        <span class="mx-2 light_text small_for_mob"><img src="../../../assets/images/star.png" alt="star" />
+                            star</span>
+                    </div>
+                </div>
+                <div class="code p-3">
+                    <p class="light_text"><span class="pink">function</span> <span
+                            class="purple ms-2">generateResume</span> <span
+                            class="light_text">{{openBraces}}</span><span class="orange">{{DummyFunctionName}}</span>{{
+                        closeBraces
+                        }}{{ open_curly_braces
+                        }}</p>
+                    <p class="light_text"><span class="pink">const</span> <span class="purple ms-2">user</span> <span
+                            class="light_text"> = </span> {{open_curly_braces}}</p>
+                    <p class="light_text"><span class="purple ms-2">about</span>: []</p>
+                    <p class="light_text">};</p>
+                    <p class="light_text"><span class="purple">user</span>.<span class="orange">about</span>.<span
+                            class="purple">push</span>{{openBraces}}<span
+                            class="orange">{{DummyFunctionName}}</span>{{closeBraces}};</p>
+                    <p class="light_text"><span class="pink"> return </span> <span class="purple">user</span>.<span
+                            class="orange">about</span><span class="light_text">;</span></p>
+                    <p class="light_text">{{close_curly_braces}}</p>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

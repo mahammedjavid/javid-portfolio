@@ -1,0 +1,203 @@
+@import "../../../styles/variables";
+.about-section {
+  display: flex;
+  height: 100%;
+  .sidebar {
+    min-width: 217px;
+    background: $primary-three;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid $lines;
+    ul > li {
+      cursor: pointer;
+    }
+    .accordion {
+      border: none !important;
+      background-color: $primary-three !important;
+      .accordion-header {
+        border-radius: 0 !important;
+        border: none !important;
+        background-color: $primary-three !important;
+        .accordion-button {
+          border-radius: 0 !important;
+          border: none !important;
+          color: $secondary_four !important;
+          background-color: $primary-three !important;
+        }
+      }
+      .accordion-item {
+        border: none !important;
+        border-radius: 0 !important;
+        background-color: $primary-three !important;
+      }
+    }
+    .project_title {
+      border-bottom: 1px solid $lines;
+      color: $secondary_five;
+    }
+  }
+  .accordion-button[aria-expanded="true"] .rotate {
+    transition: transform 0.2s ease-out;
+    transform: rotate(90deg);
+  }
+  .accordion-button[aria-expanded="false"] .rotate {
+    transition: transform 0.2s ease-out;
+    transform: rotate(0deg);
+  }
+  .accordion-button::after {
+    display: none !important;
+  }
+  .accordion-button {
+    box-shadow: none !important;
+  }
+  //   .contact-form{
+  //     padding-top: 3.5rem
+  //   }
+  //   .thankyou{
+  //     display: flex;
+  //     flex-direction: column;
+  //     align-items: center;
+  //     justify-content: center;.
+  .code {
+    border: 1px solid $lines;
+    border-radius: 15px;
+    background-color: $primary-three;
+  }
+}
+
+.active {
+  color: $accent_one !important;
+}
+.light_text {
+  color: $secondary_one;
+}
+.send_message {
+  background-color: $gradient_three;
+  color: $secondary_four;
+}
+.purple {
+  color: $accent_four;
+}
+.pink {
+  color: $secondary_five;
+}
+.orange {
+  color: $accent_one;
+}
+@media (max-width: 1270px) {
+  .about-section {
+    .about_section {
+      height: auto !important;
+      overflow: visible !important;
+    }
+    .second_section {
+      display: block !important;
+      .underline {
+        border-bottom: 1px solid $lines;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+@media (max-width: 907px) {
+  span {
+    font-size: 14px;
+  }
+  p {
+    font-size: 14px;
+  }
+  label {
+    font-size: 14px;
+  }
+  li {
+    font-size: 14px;
+  }
+}
+@media (max-width: 764px) {
+  .small_for_mob {
+    font-size: 10px;
+  }
+}
+// @media (max-width: 760px) {
+//   .about-section {
+//     flex-direction: column;
+//     .project_title {
+//       text-align: left !important;
+//     }
+//     .sidebar {
+//       padding: 3.5rem !important;
+//       padding-bottom: 0 !important;
+//       align-items: flex-start !important;
+//       background: none;
+//       border: none;
+//     }
+//     .second_section {
+//       padding-top: 0 !important;
+//       padding-bottom: 0 !important;
+//       .coding {
+//         padding-top: 3.5rem !important;
+//       }
+//       .form-control {
+//         width: 100% !important;
+//       }
+//     }
+//   }
+//   .project_title {
+//     border: none !important;
+//   }
+// }
+@media (max-width: 650px) {
+  .about-section {
+    flex-direction: column;
+    .sidebar {
+      background-color: $primary_two !important;
+      .accordion {
+        background-color: $primary_two !important;
+        .accordion-header {
+          background-color: $primary_two !important;
+          .accordion-button {
+            background-color: $primary_two !important;
+            li {
+              background-color: $primary_two !important;
+            }
+          }
+        }
+        .accordion-item {
+          background-color: $primary_two !important;
+        }
+      }
+    }
+    .second_section {
+      padding-right: 14px !important;
+      padding-left: 14px !important;
+    }
+  }
+}
+@media (max-width: 458px) {
+  span {
+    font-size: 12px;
+  }
+  p {
+    font-size: 12px;
+  }
+  li {
+    font-size: 12px;
+  }
+  .coding {
+    white-space: normal !important;
+  }
+}
+.about_section::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+.about_section::-webkit-scrollbar-track {
+  background-color: $lines;
+}
+
+.about_section::-webkit-scrollbar-thumb {
+  background-color: $secondary_one;
+}
+.file_name {
+  font-weight: 200 !important;
+}

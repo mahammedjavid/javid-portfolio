@@ -1,0 +1,60 @@
+@import "../../../../styles/variables";
+.project_title {
+  color: $secondary_five;
+}
+.project:hover{
+  cursor: context-menu;
+  color: $secondary_three;
+}
+.project_desc {
+  color: $secondary_one;
+}
+.comment {
+  color: $secondary_one;
+}
+.orange{
+  font-size: 14px;
+  color: $accent_one;
+}
+.green{
+  font-size: 14px;
+  color: $secondary_two;
+}
+.desc_view {
+  width: 350px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: $primary-three;
+}
+.view_project {
+  border-radius: 8px;
+  background-color: $gradient_three;
+  color: $secondary_four;
+}
+.disabled{
+  border: none;
+  color: $secondary_one;
+}
+.project_desc::-webkit-scrollbar {
+  width: 0;
+}
+
+.project_desc::-webkit-scrollbar-track {
+  background-color: $lines;
+}
+
+.project_desc::-webkit-scrollbar-thumb {
+  background-color: $secondary_one;
+}
+@media (max-width: 583px) {
+  .project_title{
+    font-size: 15px;
+  }
+    .project_desc ,.view_project , .green , .orange{
+      font-size: 12px;
+    }
+    .comment{
+      font-size: 14px;
+    }
+
+}

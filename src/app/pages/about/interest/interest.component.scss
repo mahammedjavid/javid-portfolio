@@ -1,0 +1,29 @@
+@import '../../../../styles/variables';
+.light_text {
+    color: $secondary_one;
+    font-size: 18px;
+  }
+  .send_message {
+    background-color: $gradient_three;
+    color: $secondary_four;
+  }
+  .purple {
+    color: $accent_four;
+  }
+  .pink {
+    color: $secondary_five;
+  }
+  .orange {
+    color: $accent_one;
+  }
+  @media (max-width: 670px) {
+    span {
+      font-size: 14px;
+    }
+    p {
+      font-size: 14px;
+    }
+    .light_text{
+      font-size: 14px;
+    }
+  }

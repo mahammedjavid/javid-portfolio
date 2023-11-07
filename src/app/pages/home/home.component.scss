@@ -1,0 +1,225 @@
+@import "../../../styles/variables";
+.hello {
+  height: 85vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.content{
+  line-break: anywhere;
+}
+p {
+  margin: 0;
+}
+.name {
+  font-size: 37px;
+  font-weight: 100;
+}
+.designation {
+  font-size: 25px;
+  font-weight: 400;
+  color: $secondary_three;
+}
+.link {
+  text-decoration: none;
+  color: $accent_three;
+}
+.link :hover{
+  text-decoration: underline;
+}
+.keyWord {
+  color: $secondary_three;
+}
+.variable {
+  color: $accent_two;
+}
+.comment {
+  color: $secondary_one;
+}
+.tagscomment{
+  color: $secondary_one;
+}
+.game_title{
+  color: $accent_two;
+  font-size: 25px;
+}
+.game {
+  max-width: 500px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+  transition: border-color 0.9s;
+  border: 1px solid $accent_three;
+}
+.game:hover {
+  .game_title{
+    color: $accent_three;
+  }
+  border: 1px solid $accent_two; /* Change border color on hover */
+}
+
+.category {
+  border-radius: 20px;
+}
+.selected {
+  color: $primary-three;
+  background: $accent_one;
+}
+.start_btn {
+  background: $secondary_two;
+}
+.correct_answer{
+  color: $accent_two;
+  border-bottom: 3px solid $accent_two;
+}
+
+
+.answer-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  margin-bottom: 8px;
+}
+
+.answer-checkbox {
+  margin-right: 8px;
+  appearance: none; /* Remove default styles */
+  width: 20px; /* Adjust width as needed */
+  height: 20px; /* Adjust height as needed */
+  border-radius: 50%; /* Make it round */
+  border: 2px solid $secondary_two; /* Green border color */
+  background-color: white; /* White background */
+  cursor: pointer;
+  position: relative;
+  outline: none; /* Remove focus outline */
+}
+
+// .answer-checkbox:checked {
+//     background-color: #4caf50; /* Green background when checked */
+//     border: 2px solid #4caf50; /* Green border when checked */
+// }
+.answer-checkbox:checked::after {
+  content: "\2713"; /* Unicode checkmark character */
+  font-size: 25px;
+  font-weight: bolder;
+  color: $secondary_two;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tags {
+  margin-top: 10px;
+}
+.submit {
+  background-color: $accent_one;
+}
+
+.tag {
+  display: inline-block;
+  background-color: $secondary_two;
+  // color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  font-size: 0.9em;
+}
+@media (max-width: 1064px) {
+  .hello {
+    flex-direction: column !important;
+    span {
+      font-size: 15px;
+    }
+    p {
+      font-size: 15px;
+    }
+    .name {
+      font-size: 25px;
+    }
+    .designation , .game_title {
+      font-size: 18px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .hello {
+    .content {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .game {
+      min-width: 90% !important;
+    }
+    justify-content: space-evenly !important;
+    button {
+      font-size: 12px;
+    }
+    .homepage,
+    .quiz {
+      padding: 15px !important;
+    }
+    span {
+      font-size: 12px;
+    }
+    p {
+      font-size: 12px;
+    }
+    .name {
+      font-size: 18px;
+    }
+    .designation , .game_title {
+      font-size: 14px;
+    }
+  }
+}
+@media (max-width: 487px) {
+  .hello {
+    .content {
+      padding: 10px;
+    }
+    .game{
+      width: 85%;
+    }
+    .homepage,
+    .quiz {
+      padding: 10px !important;
+    }
+  }
+}
+
+// animations
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 1.5s forwards;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.comment {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(40, end);
+  line-break: anywhere;
+}

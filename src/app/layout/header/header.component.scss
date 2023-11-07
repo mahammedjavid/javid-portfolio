@@ -1,0 +1,109 @@
+@import '../../../styles/variables';
+#myNav{
+    z-index: 7;
+}
+p{
+    margin: 0;
+}
+.head_box{
+    cursor: pointer;
+    border-right: 1px solid $lines;
+    border-left: 1px solid $lines;
+}
+.head_box_top{
+    cursor: pointer;
+    border: 1px solid $lines;;
+}
+.nav-link,.navbar-brand{
+    color: $secondary_one;
+}
+.navbar-toggler{
+    outline: none;
+    border: none;
+
+}
+.active{
+    color: $secondary_four !important;
+    border-bottom: 3px solid $accent_one;
+}
+.navbar-brand{
+    color: $accent_one;
+}
+@media (max-width:690px) {
+    .header{
+        .name_row{
+            margin-right: 0px !important;
+        }
+    }
+}
+@media (max-width:650px) {
+    .header{
+        div{
+            font-size: 12px;
+        }
+    }
+}
+@media (max-width:528) {
+    .header{
+        div{
+            font-size: 10px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// new
+.overlay { 
+    height: 0%; 
+    width: 100%; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    background-color: $accent_four; 
+    overflow-y: hidden; 
+    transition: 0.9s; 
+} 
+
+.overlay-content { 
+    position: relative; 
+    top: 25%; 
+    width: 100%; 
+    text-align: center; 
+} 
+
+.overlay div { 
+    padding: 10px; 
+    text-decoration: none; 
+    font-size: 25px; 
+    color: $primary_two; 
+    display: block; 
+    transition: 0.7s; 
+} 
+
+.overlay div:hover, 
+.overlay div:focus { 
+    color: $secondary_four; 
+} 
+
+.overlay .closebtn { 
+    position: absolute; 
+    top: 10px; 
+    right: 35px; 
+    font-size: 70px; 
+    color: $primary_two;
+} 
+.active_md{
+    color: $lines !important;
+    border: 1px solid $lines;
+    border-radius: 70px;
+    font-weight: 700;
+}

@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@import '.././src/styles/variables';
+body{
+    font-family: 'Fira Code', monospace;
+    stroke: $lines;
+    color: $secondary_four;
+    background: $primary_two;
+    overflow-x: hidden !important;
+}

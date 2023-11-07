@@ -1,0 +1,22 @@
+@import '../../../styles/variables';
+p{
+    margin: 0;
+}
+.head_box_top{
+    border: 1px solid $lines;
+}
+.head_box{
+    cursor: pointer;
+    border-left: 1px solid $lines;
+    border-right: 1px solid $lines;
+}
+.social_text{
+    color: $secondary_one;
+}
+@media (max-width:650px) {
+    .footer{
+        div{
+            font-size: 12px;
+        }
+    }
+}

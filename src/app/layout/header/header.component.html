@@ -1,0 +1,26 @@
+<nav class=" navbar navbar-expand-lg pb-0" id="navbar">
+  <div class=" p-0 head_box_top" style="display: flex;justify-content: space-between;width: 100%;">
+    <div class="navbar-brand p-3">{{logoTitle}}</div>
+    <span class="px-3 d-lg-none d-block" style="font-size:35px;cursor:pointer" (click)="openNav()">
+      ≡
+    </span>
+    <div class="d-none d-lg-block" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item head_box p-3" *ngFor="let item of menuItems">
+          <a class="nav-link" aria-current="page" [ngClass]="{'active' : selectedNavItem == item}"
+            (click)="selectNavItem(item)">{{item}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">
+    ×
+  </a>
+
+  <div class="overlay-content">
+    <div [ngClass]="{'active_md' : selectedNavItem == item}" (click)="selectNavItem(item)"
+      *ngFor="let item of menuItems">{{item}}</div>
+  </div>
+</div>

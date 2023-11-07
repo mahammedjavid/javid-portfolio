@@ -1,0 +1,16 @@
+<div class=" d-flex justify-content-center  align-items-center" style="flex-direction: column;">
+    <p class="project_title">Project {{index + 1}} <span class="comment project" data-bs-toggle="tooltip" data-bs-placement="top" [title]="projectData.name">// {{projectData.name.length > 19 ? projectData.name.slice(0,19)+ '...' : projectData.name}}</span></p>
+    <div style="position: relative;">
+        <img style="width: 350px;" src="../../../../assets/project_images/project_1.png" alt="">
+        <div style="position: absolute; right: 15px;top: 15px;display: flex;flex-direction: column;">
+            <img style="margin-top: 7px;border-radius: 50%;" height="24" width="24" *ngFor="let image of projectData.techStach_image"  [src]="image" alt="image">
+        </div>
+    </div>
+    <div class="desc_view d-flex p-3" style="flex-direction: column;;">
+        <p class="project_desc p-0" style="text-align: justify; height: 230px;overflow-y: scroll;">{{projectData.description}}</p>
+            <div class="end_section d-flex align-items-center justify-content-between">
+                <button class="btn btn-sm view_project w-50 " [ngClass]="{'disabled' : !projectData.link}" [disabled]="!projectData.link" (click)="viewProject(projectData.link)">view project</button>
+                <span [ngClass]="projectData.status === 'Live' ? 'green' :  'orange'">{{projectData.status}}</span>
+            </div>
+    </div>
+</div>

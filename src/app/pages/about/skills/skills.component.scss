@@ -1,0 +1,34 @@
+@import '../../../../styles/variables';
+.light_text {
+  margin: 0 10px 10px 0;
+    padding: 5px 10px;
+    color: $secondary_one;
+    border-radius: 70px;
+  }
+  .send_message {
+    background-color: $gradient_three;
+    color: $secondary_four;
+  }
+  .purple {
+    color: $accent_four;
+  }
+  .pink {
+    color: $secondary_one;
+  }
+  .orange {
+    color: $accent_one;
+  }
+  .skill_section{
+    margin-bottom: 10px;
+  }
+  @media (max-width: 670px) {
+    span {
+      font-size: 14px;
+    }
+    p {
+      font-size: 14px;
+    }
+    .light_text{
+      font-size: 14px;
+    }
+  }

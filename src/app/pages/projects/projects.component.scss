@@ -1,0 +1,77 @@
+@import "../../../styles/variables";
+.project-section {
+  height: auto;
+  display: flex;
+  min-height: 85vh;
+  // justify-content: space-between;
+  .sidebar {
+    background: $primary-three;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    border-right: 1px solid $lines;
+    .light_text{
+      color: $secondary_one;
+    }
+    .tech_head{
+      color: $secondary_four;
+    }
+    .project_title{
+      color: $secondary_five;
+      border-bottom: 1px solid $lines;
+  }
+  }
+  .techStack{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 677px){
+  .project-section {
+    .sidebar{
+      margin-right: 0 !important;
+      padding-right: 10px !important;
+      padding-left: 10px !important;
+      border: none;
+      background: none;
+      .techStackHead{
+        display: flex;
+        overflow-x: scroll;
+        .techStack {
+          margin-right: 10px;
+          padding: 5px;
+          border-radius: 13px;
+          border: 1px solid $lines;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .all_projects{
+      padding-right: 10px !important;
+      padding-left: 10px !important;
+    }
+    flex-direction: column !important;
+    // align-items: center !important; 
+    justify-content: center !important;
+  }
+}
+.techStackHead::-webkit-scrollbar {
+  height: 0.1rem;
+}
+
+.techStackHead::-webkit-scrollbar-track {
+  background-color: $lines;
+}
+
+.techStackHead::-webkit-scrollbar-thumb {
+  background-color: $secondary_one;
+}
+@media (max-width: 583px) {
+  .project-section {
+    .light_text{
+      font-size: 12px;
+    }
+
+  }
+}

@@ -57,14 +57,12 @@ export class HomeComponent implements OnInit {
       }
       this.startagame = true;
       this.loader.stop()
-      console.log(this.actual_question);
     },(err:any)=>{
       this.loader.stop()
     });
   }
   selectCategory(category: any) {
     category.selected = !category.selected;
-    console.log(category);
   }
   startagame: any = false;
   startGame() {

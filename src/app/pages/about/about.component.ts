@@ -49,11 +49,9 @@ export class AboutComponent implements OnInit {
     }
   }
   getCurrentURL() {
-    console.log(this.__router.url.slice(1));
     const route = this.__router.url.slice(1);
     this.selectedSubNavItem = route.split('_about-me/')[1];
     this.getDummyFunctionName();
-    console.log(this.selectedSubNavItem);
   }
   DummyFunctionName: any;
   getDummyFunctionName() {

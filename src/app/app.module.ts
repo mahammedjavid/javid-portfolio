@@ -5,9 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environments';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideFirebaseApp, initializeApp, } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,9 +21,14 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
     BrowserAnimationsModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
+    // AngularFireAnalyticsModule,
     NgxUiLoaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+function provideAnalytics(arg0: () => any): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
+  throw new Error('Function not implemented.');
+}
+

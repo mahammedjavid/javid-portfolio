@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '.././src/styles/variables';
+@import '@ctrl/ngx-emoji-mart/picker';
 body{
     font-family: 'Fira Code', monospace;
     stroke: $lines;

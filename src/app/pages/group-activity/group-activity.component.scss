@@ -1,0 +1,90 @@
+@import '../../../styles/variables';
+.section{
+    color: black;
+}
+.hide-scrollbar{
+  height: 67vh;
+  overflow-y: scroll;
+}
+/* styles.css or your preferred stylesheet */
+.hide-scrollbar::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  .disabled{
+    color: gray;
+    cursor: not-allowed !important;
+}
+  .message-container {
+    display: inline-flex;
+    // display: flex;
+    flex-direction: column;
+    max-width: 45%;
+    min-width: 100px;
+    text-align: center;
+    // width: 30%;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for your messages */
+  .your-message {
+    font-size: small;
+    color: black;
+    background-color: #DCF8C6; /* Light green for your messages */
+    align-self: flex-end;
+  }
+  
+  /* Style for others' messages */
+  .other-message {
+    align-self: baseline;
+    font-size: small;
+    color: black;
+    background-color: #F1F1F1; /* Light gray for others' messages */
+  }
+  .timeStamp{
+    font-size: 10px;
+    // color: lightgray !important;
+  }
+  .my_timeStamp{
+    padding-right: 7px;
+    text-align: end;
+  }
+  .other_timeStamp{
+    padding-left: 7px;
+    text-align: start;
+  }
+  .default-timeStamp{
+    text-align: center;
+  }
+  .default-message{
+    text-align: center;
+    width: 210px;
+    word-break: break-all;
+    color: #a2a3a4;
+    font-size: 10px;
+    background-color:$gradient_three ;
+    border-radius: 6px;
+    align-self: center;
+  }
+  
+  /* Style for timestamp */
+  .message-container small {
+    color: #777;
+  }
+  
+  /* Style for input area and button */
+  input, button {
+    margin-right: 10px;
+  }
+  .dropup button::after {
+    display: none !important;
+}

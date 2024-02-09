@@ -5,6 +5,13 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
   providedIn: 'root',
 })
 export class SharedService {
+  getUserInfo(){
+    const user = sessionStorage.getItem('user')
+    if(user){
+      return JSON.parse(user)
+    }
+    return 
+  }
   constructor(private loader: NgxUiLoaderService) {}
   colors = [
     '#607B96',

@@ -13,4 +13,5 @@ export const environment = {
         appId: "1:279068366963:web:8f7f6b91b1aa08f7fab206",
         measurementId: "G-Q8RPNEYVS0"
       },
+    backerUrl : 'http://localhost:3000'
    };

@@ -1,0 +1,18 @@
+<div class="container d-flex align-items-center justify-content-center" style="height: 83vh;">
+  <div class="row">
+    <div class="col-md-4 col-12" *ngFor="let data of plans">
+      <div class="card  py-3 section">
+        <div class="d-flex flex-column align-items-center justify-content-center">
+          <h6 class="fw-bold" >{{data.name}}</h6>
+          <h4 class="m-0 amount">&#8377; {{data.price_inr}}</h4>
+          <span  class="p-1 tags">For {{data.duration_months == 0 ? 'Lifetime' : data.duration_months + ' ' + 'month'}}</span>
+        </div>
+        <div class="d-flex flex-column m-3 p-3 desc">
+          <p class="m-0 py-2" *ngFor="let desc of data.description"><span>&#10003; </span> {{desc}}
+          </p>
+
+        </div>
+        <button [disabled]="userDetails?.user?.plan_id == data?.plan_id" (click)="moveToPlans(data)" class="btn  mx-3" [ngClass]="userDetails?.user?.plan_id == data?.plan_id ? 'btn-success' : data.name === 'Ultimate Plan' ? 'recommanded' :'btn-light'">{{userDetails?.user?.plan_id == data.plan_id ? 'Purchased' : data.name === 'Ultimate Plan' ? 'Upgrade (Recommanded)' : 'Upgrade'}}</button>
+      </div>
+    </div>
+  </div>

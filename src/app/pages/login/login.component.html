@@ -1,0 +1,29 @@
+<div class="position-relative container d-flex align-items-center justify-content-center" style="height: 83vh;">
+
+    <div class="slider" [ngClass]="{'moveslider': isFormSectionMoved , 'moveslider-right' : !isFormSectionMoved}"></div>
+    <div class="btn">
+        <button class="login text-light" (click)="login()">Login</button>
+        <button class="signup text-light" (click)="signup()">Signup</button>
+    </div>
+    <div class="form-section"
+        [ngClass]="{'form-section-move': isFormSectionMoved , 'form-section-move-right' : !isFormSectionMoved}">
+
+        <!-- login form -->
+        <div class="login-box" [formGroup]="loginForm">
+            <input type="email" class="email ele" placeholder="youremail@email.com" formControlName="email">
+            <input type="password" class="password ele" placeholder="password" formControlName="password">
+            <p *ngIf="error" style="color: white;">{{error}}</p>
+            <button class="clkbtn" (click)="loginTOPlatform()" [disabled]="loginForm.invalid">Login</button>
+        </div>
+
+        <!-- signup form -->
+        <div class="signup-box" [formGroup]="registerForm">
+            <input type="text" class="name ele" placeholder="Enter your name" formControlName="name">
+            <input type="email" class="email ele" placeholder="youremail@email.com" formControlName="email">
+            <input type="password" class="password ele" placeholder="password" formControlName="password">
+            <p *ngIf="error" style="color: white;">{{error}}</p>
+            <button class="clkbtn" (click)="registerTOPlatform()" [disabled]="registerForm.invalid">Signup</button>
+        </div>
+    </div>
+    <!-- <button (click)="googleSignion()">Google signIn</button> -->
+</div>

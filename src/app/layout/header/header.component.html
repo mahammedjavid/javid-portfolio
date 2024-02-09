@@ -6,9 +6,26 @@
     </span>
     <div class="d-none d-lg-block" id="navbarNav">
       <ul class="navbar-nav">
+        <li class="nav-item head_box p-3">
+          <div class="dropdown">
+            <a data-bs-toggle="dropdown"
+            aria-expanded="false" class="nav-link dropdown-toggle" aria-current="page" [ngClass]="{'active' : selectedNavItem == '_more'}"
+            >_more</a>
+            <ul class="dropdown-menu dropdown-dark">
+              <li class="d-flex align-items-center justify-content-between" *ngFor="let item of moreDropdown" (click)="openMoreDropdownMenu(item.link)">
+                <a class="dropdown-item" [ngClass]="!userDetails?.user?.plan_id && item.link == '_activity' ? 'disabled' : ''">{{item.name}}</a>
+                <ng-container *ngIf="item.link == '_activity' && !userDetails?.user?.plan_id">
+                  <img class="me-3" height="20" src="../../../assets/icons/crown.png" alt="">
+                </ng-container>
+
+              </li>
+            </ul>
+          </div>
+        </li>
         <li class="nav-item head_box p-3" *ngFor="let item of menuItems">
           <a class="nav-link" aria-current="page" [ngClass]="{'active' : selectedNavItem == item}"
-            (click)="selectNavItem(item)">{{item}}</a>
+            (click)="selectNavItem(item)">{{item}} 
+          </a>
         </li>
       </ul>
     </div>

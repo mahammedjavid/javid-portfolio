@@ -1,0 +1,90 @@
+<div class="section">
+  <div class="row p-0">
+    <!-- Sidebar with group list -->
+    <div class="position-relative col-2 hide-scrollbar"
+      style="height: 80vh; overflow-y: scroll; cursor: pointer; background-color: #011627;color: white;">
+      <div *ngFor="let group of allGroups" (click)="selectGroup(group)" class="d-flex flex-column  my-2 p-2"
+        style="cursor: pointer;">
+        <div class="d-flex flex-row align-items-center">
+          <img height="35" width="35"
+            [src]="group.group_info.total_members > 2 ? '../../../assets/icons/group-users.png' : '../../../assets/icons/avatar-profile-svgrepo-com.svg'"
+            alt="group">
+          <p class="ms-2 mb-0 d-flex flex-column">{{group.group_info.group_name}}
+            <!-- <span style="font-size: 13px;color: lightgray;">{{getTheLastMessage(group)}}</span> -->
+          </p>
+        </div>
+      </div>
+      <div class="dropup" style="position: absolute;right: 2px;top: 5px;">
+        <button class="btn btn-light bg-transparent border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          +
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item d-flex justify-content-between align-items-center" (click)="getAllUser('group')"><span [ngClass]="!userDetails?.user.plan_id || userDetails?.user.plan_id == 1 ? 'disabled' : ''">New group</span>
+              <ng-container *ngIf="!userDetails?.user.plan_id || userDetails?.user.plan_id == 1">
+                <img src="../../../assets/icons/crown.png" height="20" alt="">
+              </ng-container>
+            </a></li>
+          <li><a class="dropdown-item d-flex justify-content-between align-items-center" (click)="getAllUser('individual')"><span [ngClass]="!userDetails?.user.plan_id || userDetails?.user.plan_id == 1 ? 'disabled' : ''">New Chat</span>
+              <ng-container *ngIf="!userDetails?.user.plan_id || userDetails?.user.plan_id == 1">
+                <img src="../../../assets/icons/crown.png" height="20" alt="">
+              </ng-container></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main chat area -->
+    <div class="col-10 p-0 position-relative" style="background:#FEA55F;">
+      <!-- Header with group name and call button -->
+      <div class="d-flex justify-content-between align-items-center p-2 border-bottom"
+        style="background-color:#FFFFFF ;">
+        <!-- style="position: absolute; top: 0; width: 100%;" -->
+        <div class="d-flex flex-column">
+          <p class="m-0">{{roomInfo.roomName || 'Tech Community'}}</p>
+          <span style="color: gray;">{{userCount + ' ' + 'Members'}}</span>
+        </div>
+      </div>
+
+      <!-- Chat messages area -->
+      <div class="hide-scrollbar" id="chat-messages">
+        <!-- Loop through messageData to display chat messages -->
+        <div *ngFor="let message of messageData" class="p-2 d-flex w-100 flex-column">
+          <small class="timeStamp me-3"
+            [ngClass]="{'default-timeStamp p-0 py-1' : !message.user_id , 'my_timeStamp': message.user_id == userDetails?.user?.user_id, 'other_timeStamp': message.user_id != userDetails?.user?.user_id}"><span
+              class="me-3"
+              *ngIf="message.user_id && message.user_id != userDetails?.user?.user_id">{{message?.user_info?.name}}</span>{{
+            message.timestamp | date:'shortTime' }}</small>
+          <div class="message-container me-3"
+            [ngClass]="{'default-message p-0 py-1' : !message.user_id , 'your-message': message.user_id == userDetails?.user?.user_id, 'other-message': message.user_id != userDetails?.user?.user_id}">
+            <p class="mb-1" style="word-break: break-word;">{{ message.message }}</p>
+            <p *ngIf="message.media_url" class="mb-1 d-flex align-items-center justify-content-center"
+              style="position: relative;"><img height="300" width="300" [src]="message.media_url" alt="url">
+              <img src="../../../assets/icons/download.png" (click)="downloadImage(message.media_url)" alt="download"
+                height="30" width="30" style="position: absolute;right: 5px;top: 3px;cursor: pointer;">
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input area for typing messages -->
+      <div class="p-2 py-0 ps-0 bg-light d-flex" style="position: absolute;bottom: 0;width: 100%;">
+        <input [(ngModel)]="message" placeholder="Type something" type="text" class="form-control w-100 border-0">
+        <emoji-mart *ngIf="showEmojiTab"
+          [i18n]="{ search: 'Search', categories: { search: 'Search', recent: 'Recents' } }"
+          (emojiClick)="addEmoji($event)" [style]="{ position: 'absolute', bottom: '111%', right: '1%' }"></emoji-mart>
+        <button style="position: absolute;right: 4%;" (click)="toggleEmojiTab()" class="btn bg-transparent"><img
+            src="../../../assets/icons/happy.png" height="20" alt=""></button>
+        <div class="dropup" style="position: absolute;right: 7%;">
+          <button class="btn btn-light bg-transparent border-0 dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            +
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" (click)="addFileUrl()">File URL</a></li>
+          </ul>
+        </div>
+        <button class="btn btn-sm btn-light" (click)="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+</div>

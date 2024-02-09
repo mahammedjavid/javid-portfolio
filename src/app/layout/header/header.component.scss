@@ -88,6 +88,10 @@ p{
     display: block; 
     transition: 0.7s; 
 } 
+.disabled{
+    color: gray;
+    cursor: not-allowed !important;
+}
 
 .overlay div:hover, 
 .overlay div:focus { 

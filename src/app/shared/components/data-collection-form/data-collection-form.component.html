@@ -1,0 +1,57 @@
+<div class="modal-header text-dark">
+  <h4 class="modal-title pull-left" style="font-size: 19px;">{{formRequirementData.title || 'Not found'}}</h4>
+  <button (click)="close()" type="button" class="btn-close close pull-right" aria-label="Close">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form class="row" [formGroup]="datatCollectionForm">
+    <div *ngFor="let field of formRequirementData.fields" class="mb-3">
+
+
+      <ng-container *ngIf="field.input_type != 'checkbox' && field.input_type != 'single-select'">
+        <label for="{{ field.slag }}" class="form-label">{{ field.name }}</label>
+        <input *ngIf="field.input_type !== 'textarea' && field.input_type != 'checkbox'; else textareaBlock"
+          type="{{ field.input_type || 'text' }}" class="form-control" id="{{ field.slag }}"
+          [formControl]="datatCollectionForm.get(field?.slag)" (change)="oninputHChange($event)" />
+      </ng-container>
+
+
+
+      <ng-container *ngIf="field.input_type == 'checkbox'">
+        <ng-container *ngFor="let option of field.list">
+          <div class="d-flex align-items-cemter">
+            <input class="form-check-input" type="checkbox" id="{{ option.name }}" [value]="option.user_id" [formControl]="datatCollectionForm.get(field?.slag)"
+            (change)="oninputHChange($event)" />
+          <label [for]="option.name" class="form-check-label ms-2">{{option.name}}</label>
+          </div>
+        </ng-container>
+
+      </ng-container>
+
+      <ng-container *ngIf="field.input_type == 'single-select'">
+        <ng-container>
+          <select [formControl]="datatCollectionForm.get(field.slag)" class="form-select" aria-label="Default select example">
+            <option [value]="user.user_id" *ngFor="let user of field.list">{{user.name}}</option>
+            </select>
+        </ng-container>
+
+      </ng-container>
+      <ng-template #textareaBlock>
+        <textarea *ngIf="field.input_type != 'checkbox'" class="form-control" id="{{ field.slag }}"
+          [formControl]="datatCollectionForm.get(field.slag)"></textarea>
+      </ng-template>
+      <div
+        *ngIf="datatCollectionForm.get(field.slag)?.hasError('required') && datatCollectionForm.get(field.slag)?.touched"
+        class="text-danger">
+        {{ field.name }} is required.
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-light border" (click)="close()"
+    *ngIf="formRequirementData.cancel_title">{{formRequirementData.cancel_title}}</button>
+  <button class="btn btn-info border" (click)="submit()"
+    *ngIf="formRequirementData.submit_title">{{formRequirementData.submit_title}}</button>
+</div>

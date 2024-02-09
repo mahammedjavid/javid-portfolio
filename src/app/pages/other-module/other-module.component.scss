@@ -1,0 +1,24 @@
+@import '../../../styles/variables';
+.container{
+    .section{
+        background-color: $primary_two;border: 1px solid $lines;
+        .amount{
+            color: $accent_one;
+        }
+        .tags{
+            border-radius: 7px;
+           background-color: $accent_one;
+           border: 1px solid $lines ; 
+        }
+        .desc{
+            min-height: 222px;
+            border-radius: 7px;
+            border: 1px solid $accent_one;
+        }
+        .recommanded{
+            background-color:$accent_one;
+            color: black;
+            border: none;
+        }
+    }
+}

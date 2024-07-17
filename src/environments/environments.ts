@@ -1,6 +1,6 @@
 export const environment = {
     GITHUB : 'https://github.com/mahammedjavid',
-    LINKDIN : 'https://www.linkedin.com/in/mahammed-javid-748390215/',
+    LINKDIN : 'https://www.linkedin.com/in/mahammedjavid/',
     INSTAGRAM : 'https://instagram.com/md_javid07?igshid=MzMyNGUyNmU2YQ%3D%3D&utm_source=qr',
     TWITTER : '',
     FORM_LINK : 'https://public.herotofu.com/v1/789ca380-77c8-11ee-80c8-136eb968d513',

@@ -102,4 +102,9 @@ export class HomeComponent implements OnInit {
       option.user_input.splice(option.user_input.indexOf(index), 1);
     }
   }
+  downloadResume(){
+    const file = '../../../assets/static/mahammed_javid_resume.pdf'
+    this.sharedService.downloadStatisFIle(file)
+  }
+  
 }

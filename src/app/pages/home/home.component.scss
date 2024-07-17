@@ -130,6 +130,10 @@ p {
   margin-bottom: 4px;
   font-size: 0.9em;
 }
+.resume-dwn{
+  color: $secondary_four;
+  border: 1px solid $secondary_four;
+}
 @media (max-width: 1064px) {
   .hello {
     flex-direction: column !important;

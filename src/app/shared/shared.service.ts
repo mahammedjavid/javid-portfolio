@@ -34,6 +34,11 @@ export class SharedService {
           image: '../../assets/techStack/icons8-css.svg',
         },
         {
+          name: 'JavaScript',
+          color: '#FF5733',
+          image: '../../assets/techStack/icons8-js.svg',
+        },
+        {
           name: 'Ionic',
           color: '#33FFC7',
           image: '../../assets/techStack/icons8-ionic.svg',
@@ -44,14 +49,19 @@ export class SharedService {
           image: '../../assets/techStack/icons8-angular.svg',
         },
         {
+          name: 'Vue.js',
+          color: '#5733FF',
+          image: '../../assets/techStack/vue.svg',
+        },
+        {
+          name: 'Nuxt.js',
+          color: '#5733FF',
+          image: '../../assets/techStack/nuxt.svg',
+        },
+        {
           name: 'Bootstrap',
           color: '#FFC733',
           image: '../../assets/techStack/icons8-bootstrap.svg',
-        },
-        {
-          name: 'JavaScript',
-          color: '#FF5733',
-          image: '../../assets/techStack/icons8-js.svg',
         },
       ],
       backend: [
@@ -95,6 +105,11 @@ export class SharedService {
         },
       ],
       tools: [
+        {
+          name: 'Azure Devops',
+          color: '#FF5733',
+          image: '../../assets/techStack/azure-devops-svgrepo-com.svg',
+        },
         {
           name: 'Git',
           color: '#33FF57',
@@ -193,5 +208,14 @@ export class SharedService {
     setTimeout(() => {
       this.loader.stop()
     }, 70);
+  }
+  downloadStatisFIle(file:string): void {
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', file); // Replace with your local PDF file path
+    link.setAttribute('download', 'resume.pdf');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   }
 }

@@ -22,6 +22,13 @@
                     <span class="light_text">{{ts.name}}</span>
                 </div>
             </div>
+            <p class="tech_head pt-3">Mobile App</p>
+            <div class="techStackHead">
+                <div class="techStack w-100" *ngFor="let ts of techStack.mobile">
+                    <img height="27" width="27" class="me-1 my-2" [src]="ts.image" alt="image">
+                    <span class="light_text">{{ts.name}}</span>
+                </div>
+            </div>
     </div>
     <div class="project_list w-100">
         <div class="d-flex align-items-center justify-content-center"  style="flex-wrap: wrap;">

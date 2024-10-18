@@ -5,7 +5,7 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
   providedIn: 'root',
 })
 export class SharedService {
-  constructor(private loader: NgxUiLoaderService) {}
+  constructor(private loader: NgxUiLoaderService) { }
   colors = [
     '#607B96',
     '#3C9D93',
@@ -71,6 +71,11 @@ export class SharedService {
           image: '../../assets/techStack/icons8-nestjs.svg',
         },
         {
+          name: 'Flask',
+          color: '#5733FF',
+          image: '../../assets/techStack/python.png',
+        },
+        {
           name: 'Node.js',
           color: '#57FF33',
           image: '../../assets/techStack/icons8-nodejs.svg',
@@ -79,6 +84,11 @@ export class SharedService {
           name: 'Express.js',
           color: '#FFC733',
           image: '../../assets/techStack/icons8-express-js.svg',
+        },
+        {
+          name: 'Django',
+          color: '#5733FF',
+          image: '../../assets/techStack/python.png',
         },
       ],
       database: [
@@ -131,6 +141,18 @@ export class SharedService {
           image: '../../assets/techStack/icons8-vs-code.svg',
         },
       ],
+      mobile: [
+        {
+          name: 'Ionic',
+          color: '#33FFC7',
+          image: '../../assets/techStack/icons8-ionic.svg',
+        },
+        {
+          name: 'Flutter',
+          color: '#33FFC7',
+          image: '../../assets/techStack/flutter.svg',
+        },
+      ],
     };
 
     return skills;
@@ -139,8 +161,8 @@ export class SharedService {
     const projects = [
       {
         name: 'E-Commerce Website',
-        description: `Developed a full-stack e-commerce website, including bulk product upload features.
-        - Managed end-to-end aspects of the e-commerce site, showcasing expertise in frontend and backend development.`,
+        description: `Developed a comprehensive full-stack e-commerce platform featuring bulk product upload capabilities. 
+        - Managed end-to-end development, showcasing expertise in both frontend and backend technologies to create a seamless shopping experience.`,
         image: 'path_to_ecommerce_image',
         techStach_image: [
           '../../assets/icons/angular.png',
@@ -150,25 +172,54 @@ export class SharedService {
         link: null,
       },
       {
-        name: 'Travel App',
-        description: `Developed a travel mobile app using Ionic during the training period at Pacewisdom.
-        - Utilized Capacitor and Android Studio to create a mobile APK for seamless user experience.`,
-        image: 'path_to_travel_app_image',
-        techStach_image: ['../../assets/techStack/icons8-ionic.svg'],
-        status: 'Live',
-        link: null,
-      },
-      {
         name: 'Leave Management System',
-        description: `The Leave Management System is an Angular-based web application designed for administrators to efficiently handle user leave requests. It implements Role-Based Access Control (RBAC) with two distinct user roles: Admin and regular users. Admins have access to a comprehensive set of features including user creation, leave request approval/rejection, holiday management, and leave listing. On the other hand, regular users are limited to viewing the holiday listing and checking the status of their leave applications. The system also enables users to apply for leaves, specifying type, start and end dates, along with additional comments. Admins can review, approve or reject these requests based on company policies. Additionally, the system allows admins to manage holidays by creating new ones and performing CRUD operations for both users and holidays. Overall, the Leave Management System provides a user-friendly interface that facilitates effective leave management while ensuring transparency and control over holiday listings and leave requests.`,
+        description: `Designed and implemented an Angular-based web application for efficient leave management. 
+        - Integrated Role-Based Access Control (RBAC) to allow admins to manage user requests effectively, enabling functionalities like leave approval, holiday management, and user creation, while providing regular users with a transparent interface to check their leave status.`,
         image: 'path_to_travel_app_image',
         techStach_image: ['../../assets/icons/angular.png'],
         status: 'Live',
         link: null,
       },
       {
+        name: 'Loan Provider App',
+        description: `Developed a loan provider application using Angular and Ionic. 
+        - Designed with a user-friendly interface to simplify the loan application process, enhancing accessibility for users seeking financial assistance.`,
+        image: 'path_to_loan_provider_image',
+        techStach_image: ['../../assets/icons/angular.png', '../../assets/techStack/icons8-ionic.svg'],
+        status: 'Live',
+        link: null,
+      },
+      {
+        name: 'Loan Seeker App',
+        description: `Developed a comprehensive Loan Seeker application using Angular and Ionic, integrated with a Django backend.
+        - Utilized the Beckn protocol and ONIX server to streamline the loan application process, enhancing user experience and facilitating seamless interactions between borrowers and lenders.`,
+        image: 'path_to_loan_seeker_image',
+        techStach_image: ['../../assets/icons/angular.png', '../../assets/techStack/icons8-ionic.svg'],
+        status: 'Live',
+        link: null,
+      },
+      {
+        name: 'Seller Store Project',
+        description: `Developed a seller store application that allows users to create and manage their own online stores.
+        - Connected to the ONDC network, leveraging Angular for the frontend and Flask for the backend, ensuring a robust and scalable platform for sellers to reach their customers effectively.`,
+        image: 'path_to_seller_store_image',
+        techStach_image: ['../../assets/icons/angular.png', '../../assets/techStack/python.png'],
+        status: 'Live',
+        link: null,
+      },
+      {
+        name: 'Health Care Product',
+        description: `Developed a comprehensive health care product for providers, creating an entire website and server infrastructure. 
+        - Enabled providers to register patients, manage their health records, and access various benefits and insurance options. The platform was designed to enhance user experience and streamline the registration process for optimal health care delivery.`,
+        image: 'path_to_ion_health_care_image',
+        techStach_image: ['../../assets/techStack/python.png', '../../assets/techStack/nuxt.svg'],
+        status: 'Live',
+        link: null,
+      },
+      {
         name: 'Multi-Module Platform Development',
-        description: `I spearheaded the development of a comprehensive multi-module platform, overseeing various components including the Skilling Pathway, Pre-Screen Credit Score (PCS), and Credit Guarantee (CG) projects. The Skilling Pathway module empowered users to effortlessly create resumes, complete courses, and apply for job opportunities. Within the PCS module, I implemented advanced survey functionalities to accurately assess participant credit scores. Additionally, in the CG module, I designed a robust system enabling participants to apply for loans based on agent-assessed survey points, covering key aspects such as disbursement, repayment, and claims processes. In my role, I also took charge of managing diverse modules within the project, overseeing frontend logic, UI enhancements, and more. To elevate user experience and functionality, I leveraged a range of specialized packages.`,
+        description: `Led the development of a comprehensive multi-module platform, incorporating various components such as Skilling Pathway, Pre-Screen Credit Score, and Credit Guarantee projects.
+        - Empowered users to create resumes, complete courses, and apply for jobs while implementing advanced survey functionalities to accurately assess credit scores. Designed systems for loan applications and claims processes, ensuring user-centric enhancements across the platform.`,
         image: 'path_to_samhita_image',
         techStach_image: ['../../assets/icons/angular.png'],
         status: 'Live',
@@ -176,7 +227,8 @@ export class SharedService {
       },
       {
         name: 'Weather Application',
-        description: `The Weather Application is a user-friendly web platform that provides real-time updates on current weather conditions. It gives users accurate information about temperature, humidity, wind speed, and more for their current location. The interface is designed to be intuitive, displaying the weather details prominently. Users can easily access the most recent and relevant weather data.`,
+        description: `Developed a user-friendly web platform providing real-time weather updates. 
+        - Delivered accurate information on temperature, humidity, and wind speed, designed with an intuitive interface to enhance user accessibility to critical weather data.`,
         image: 'path_to_travel_app_image',
         techStach_image: ['../../assets/techStack/icons8-js.svg'],
         status: 'Live',
@@ -184,32 +236,44 @@ export class SharedService {
       },
       {
         name: 'Flipkart Clone',
-        description: `The Flipkart Clone is a web application.Developed using JavaScript and gives users a smooth and interactive experience. It uses a tool called Local Storage to keep track of what users do, like adding or removing items from their shopping cart. This application has a smart search and filter feature, helping users quickly find the products they want in a big list. The design is user-friendly, showing pictures, prices, and availability of products.It is responsive for all the devices.`,
+        description: `Created a web application that replicates the Flipkart shopping experience using JavaScript. 
+        - Implemented Local Storage for a smooth and interactive user experience, complete with smart search and filter features to help users navigate a vast product catalog efficiently.`,
         image: 'path_to_travel_app_image',
         techStach_image: ['../../assets/techStack/icons8-js.svg'],
         status: 'Live',
         link: null,
       },
       {
-        name: 'Development of wild animal ward off system : Crop Protector',
-        description: `As we know Surveillance plays a major role in many fields be it at home, hospitals, schools, public places, farmlands etc. It helps us to monitor a certain area and prevent theft and also provides proof of evidence. In the case of farmlands or agricultural lands surveillance is very important to prevent unauthorized people from gaining access to the area as well as to protect the area from animals.
-        The image processing techniques /night vision cameras /IOT technologies will surely provide solution to these problems. Various methods aim only at surveillance which is mainly for human intruders, but we tend to forget that the main enemies of such farmers are the animals which destroy the crops. This leads to poor yield of crops and significant financial loss to the owners of the farmland. This problem is so pronounced that sometimes the farmers decide to leave the areas barren due to such frequent animal attacks. This system helps us to keep away such wild animals from the farmlands as well as provides surveillance functionality.`,
+        name: 'Crop Protector: Wild Animal Surveillance System',
+        description: `Engineered a surveillance system aimed at protecting agricultural lands from wildlife. 
+        - Utilized image processing techniques and IoT technologies to deter animals from crops, preventing financial losses for farmers by ensuring secure farmland monitoring.`,
         image: 'path_to_travel_app_image',
         techStach_image: ['../../assets/techStack/icons8-iot-32.png'],
         status: 'Live',
         link: null,
       },
+      {
+        name: 'Travel App',
+        description: `Created a mobile travel application using Ionic during my training at Pacewisdom.
+        - Leveraged Capacitor and Android Studio to develop an APK that enhances user experience through intuitive design and functionality.`,
+        image: 'path_to_travel_app_image',
+        techStach_image: ['../../assets/techStack/icons8-ionic.svg'],
+        status: 'Live',
+        link: null,
+      },
+
     ];
 
     return projects;
   }
-  staticLoader(){
-    this.loader.start() 
+
+  staticLoader() {
+    this.loader.start()
     setTimeout(() => {
       this.loader.stop()
     }, 70);
   }
-  downloadStatisFIle(file:string): void {
+  downloadStatisFIle(file: string): void {
     const link = document.createElement('a');
     link.setAttribute('target', '_blank');
     link.setAttribute('href', file); // Replace with your local PDF file path

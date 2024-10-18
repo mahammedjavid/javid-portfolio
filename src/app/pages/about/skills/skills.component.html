@@ -18,6 +18,12 @@
         </div>
     </div>
     <div class="skill_section">
+        <p style="font-weight: bolder;" class="pink">Mobile App</p>
+        <div style="display: flex;align-items: center;flex-wrap: wrap">
+            <span *ngFor="let mobile of skills?.mobile" class="light_text" [style.border]="'1px solid #1E2D3D'"><img height="27" width="27" [src]="mobile.image" alt="image"> {{mobile.name}}</span>
+        </div>
+    </div>
+    <div class="skill_section">
         <p style="font-weight: bolder;" class="pink">Tools</p>
         <div style="display: flex;align-items: center;flex-wrap: wrap">
             <span *ngFor="let tool of skills?.tools" class="light_text" [style.border]="'1px solid #1E2D3D'"><img height="27" width="27" [src]="tool.image" alt="image"> {{tool.name}}</span>

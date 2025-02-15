@@ -1,0 +1,41 @@
+<div class="project-card-container">
+    <div class="project-preview">
+        <img class="project-image" [src]="'../../../../assets/project_images/project_1.png'" [alt]="projectData.name">
+        <div class="project-overlay">
+            <!-- <div class="project-number">#{{index + 1}}</div> -->
+            <!-- <h3 class="project-title">{{projectData.name}}</h3> -->
+            <div class="tech-stack-badges">
+                <img class="tech-badge" *ngFor="let image of projectData.techStach_image" 
+                     [src]="image" [alt]="'Tech stack icon'">
+            </div>
+        </div>
+    </div>
+
+    <div class="project-content">
+        <div class="project-header">
+            <span class="project-number">{{projectData.name}}</span>
+            <span class="project-status" [class.status-live]="projectData.status === 'Live'"
+                  [class.status-development]="projectData.status !== 'Live'">
+                <i class="fas" [ngClass]="projectData.status === 'Live' ? 'fa-rocket' : 'fa-code-branch'"></i>
+                {{projectData.status}}
+            </span>
+        </div>
+
+        <div class="project-description">
+            {{projectData.description}}
+        </div>
+        
+        <div class="project-actions">
+            <button class="view-project-btn" 
+                    [disabled]="!projectData.link"
+                    (click)="viewProject(projectData.link)">
+                <i class="fas fa-external-link-alt"></i>
+                Live Preview
+            </button>
+            <button class="source-code-btn" *ngIf="projectData.github">
+                <i class="fab fa-github"></i>
+                View Code
+            </button>
+        </div>
+    </div>
+</div>

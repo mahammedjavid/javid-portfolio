@@ -1,0 +1,131 @@
+<div class="terminal-window" [@fadeInOut]>
+    <div class="terminal-header">
+        <div class="terminal-controls">
+            <div class="terminal-buttons">
+                <span class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+            </div>
+            <div class="tab-bar">
+                <div class="tab active">
+                    <i class="fas fa-terminal"></i>
+                    <span>projects.sh</span>
+                </div>
+                <div class="tab">
+                    <i class="fas fa-server"></i>
+                    <span>config</span>
+                </div>
+            </div>
+        </div>
+        <div class="server-info">
+            <span class="server-status">
+                <i class="fas fa-circle"></i> connected
+            </span>
+            <span class="server-name">javid&#64;macbook-pro</span>
+            <span class="server-path">~/projects</span>
+        </div>
+    </div>
+
+    <div class="terminal-body">
+        <div class="command-line">
+            <span class="prompt">➜</span>
+            <span class="directory">~/projects</span>
+            <span class="git-branch">(main)</span>
+            <span class="command">ls -la projects/</span>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card" *ngFor="let project of projects">
+                <div class="project-header">
+                    <div class="header-left">
+                        <span class="status-dot" [ngClass]="{'active': project.status === 'Live'}"></span>
+                        <span class="project-id">#{{ project.name | lowercase }}</span>
+                    </div>
+                    <div class="project-meta">
+                        <span class="status">{{ project.status }}</span>
+                        <span class="date">Updated: {{ project.updatedAt || 'Recently' }}</span>
+                    </div>
+                </div>
+
+                <div class="project-content">
+                    <div class="content-header">
+                        <h3>{{ project.name }}</h3>
+                        <div class="project-links">
+                            <a [href]="project.github" target="_blank" *ngIf="project.github" class="link-item">
+                                <i class="fab fa-github"></i>
+                                <span>Source</span>
+                            </a>
+                            <a [href]="project.link" target="_blank" *ngIf="project.link" class="link-item">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span>Demo</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="terminal-output">
+                        <div class="output-line">
+                            <span class="prompt">$</span>
+                            <span class="command">cat description.txt</span>
+                        </div>
+                        <p class="description">{{ project.description }}</p>
+                        
+                        <div class="output-line">
+                            <span class="prompt">$</span>
+                            <span class="command">ls status/</span>
+                        </div>
+                        <div class="status-chips">
+                            <span class="chip status-chip" [class.live]="project.status === 'Live'">
+                                <i class="fas" [ngClass]="project.status === 'Live' ? 'fa-rocket' : 'fa-code-branch'"></i>
+                                {{ project.status }}
+                            </span>
+                            <span class="chip version-chip">v{{ project.version || '1.0.0' }}</span>
+                            <span class="chip date-chip">
+                                <i class="far fa-clock"></i>
+                                {{ project.updatedAt || 'Recently' }}
+                            </span>
+                        </div>
+
+                        <div class="output-line">
+                            <span class="prompt">$</span>
+                            <span class="command">ls tech/</span>
+                        </div>
+                        <div class="tech-stack">
+                            <span *ngFor="let tech of project.technologies" class="tech-item">
+                                {{ tech }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="command-line">
+            <span class="prompt">➜</span>
+            <span class="directory">~/projects</span>
+            <span class="git-branch">(main)</span>
+            <span class="blink">█</span>
+        </div>
+    </div>
+
+    <div class="terminal-footer">
+        <div class="footer-left">
+            <span class="git-info">
+                <i class="fab fa-git-alt"></i>
+                main
+            </span>
+            <span class="server-load">
+                <i class="fas fa-microchip"></i>
+                CPU: 2%
+            </span>
+            <span class="memory-usage">
+                <i class="fas fa-memory"></i>
+                MEM: 512MB
+            </span>
+        </div>
+        <div class="footer-right">
+            <span class="encoding">UTF-8</span>
+            <span class="line-ending">LF</span>
+            <span class="terminal-type">zsh</span>
+        </div>
+    </div>
+</div>

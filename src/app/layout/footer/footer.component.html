@@ -1,0 +1,28 @@
+<footer class="terminal-footer">
+    <div class="footer-container">
+        <div class="social-section">
+            <span class="terminal-prompt d-none d-md-block">$</span>
+            <span class="social-label d-none d-md-block">connect --with-socials</span>
+            <div class="social-links">
+                <a *ngFor="let item of social_media" 
+                   [href]="item.link" 
+                   class="social-link"
+                   target="_blank"
+                   [attr.aria-label]="item.name">
+                    <span class="terminal-prompt d-none d-md-block">&gt;</span>
+                    <img [src]="item.image" [alt]="item.name" class="social-icon">
+                    <span class="social-name d-none d-md-block">{{item.name}}</span>
+                </a>
+                
+                <a [href]="github.link" 
+                   class="social-link github-link"
+                   target="_blank"
+                   aria-label="GitHub">
+                    <span class="terminal-prompt d-none d-md-block">&gt;</span>
+                    <img [src]="github.image" alt="GitHub" class="social-icon">
+                    <span class="social-name d-none d-md-block">{{github.name}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>

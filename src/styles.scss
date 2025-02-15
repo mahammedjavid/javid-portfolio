@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@import '.././src/styles/variables';
+body{
+    font-family: 'Fira Code', monospace;
+    stroke: $lines;
+    color: $secondary_four;
+    background: var(--bg-primary);
+    overflow-x: hidden !important;
+}
+
+:root {
+  --github-bg: #0d1117;
+  --github-text: #c9d1d9;
+  --github-card-bg: #161b22;
+  --github-border: #30363d;
+  --github-header-bg: #161b22;
+  --github-icon: #58a6ff;
+  --github-terminal-bg: #0d1117;
+  --github-prompt: #58a6ff;
+  --github-response: #7ee787;
+  --github-cursor: #58a6ff;
+  --github-stat-bg: #21262d;
+  --github-btn-bg: #21262d;
+  --github-btn-text: #c9d1d9;
+  --github-btn-hover: #30363d;
+  --github-primary: #238636;
+  --github-primary-hover: #2ea043;
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --bg-tertiary: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-color: #007bff;
+  --accent-color-dark: #0056b3;
+  --accent-color-rgb: 0, 123, 255;
+  --border-color: #333333;
+  --success-color: #28a745;
+}

@@ -1,0 +1,77 @@
+<div class="terminal-container" #terminalContainer>
+    <!-- Terminal Header -->
+    <div class="terminal-header">
+        <div class="terminal-controls">
+            <span class="control close"></span>
+            <span class="control minimize"></span>
+            <span class="control expand"></span>
+        </div>
+        <div class="terminal-title">javid&#64;portfolio:~/home</div>
+    </div>
+
+    <!-- Terminal Body -->
+    <div class="terminal-body">
+        <!-- Welcome Section -->
+        <div class="command-block">
+            <div class="command-line">
+                <span class="prompt">$</span>
+                <span class="command">whoami</span>
+            </div>
+            <div class="output">
+                <div class="profile-info">
+                    <span class="highlight">User:</span> Mahammed Javid
+                    <br>
+                    <span class="highlight">Role:</span> Full Stack Developer
+                    <br>
+                    <span class="highlight">Experience:</span> 3+ Years
+                    <br>
+                    <span class="highlight">Projects:</span> 11+ Completed
+                    <br>
+                    <span class="highlight">Status:</span> Available for hire
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Tech Stack Section -->
+        <div class="command-block">
+            <div class="command-line">
+                <span class="prompt">$</span>
+                <span class="command">ls -la /programming-language/</span>
+            </div>
+            <div class="output tech-grid">
+                <div *ngFor="let tech of majorTechStack" class="tech-item">
+                    <img [src]="tech.image" [alt]="tech.name">
+                    <span class="tech-name">{{tech.name}}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions Section -->
+        <div class="command-block">
+            <div class="command-line">
+                <span class="prompt">$</span>
+                <span class="command">./show-actions.sh</span>
+            </div>
+            <div class="output actions-grid">
+                <a [href]="github_link" target="_blank" class="action-button">
+                    <i class="fab fa-github"></i>
+                    <span>View GitHub</span>
+                </a>
+                <button (click)="downloadResume()" class="action-button">
+                    <i class="fas fa-file-download"></i>
+                    <span>Download CV</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Interactive Prompt -->
+        <div class="command-line active">
+            <span class="prompt">$</span>
+            <span class="command-input">
+                <span class="typed-text">contact --send-message</span>
+                <span class="cursor">█</span>
+            </span>
+        </div>
+    </div>
+</div>

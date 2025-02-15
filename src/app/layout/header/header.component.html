@@ -1,0 +1,68 @@
+<header class="terminal-header">
+  <!-- Desktop Navigation -->
+  <nav class="desktop-nav">
+    <div class="container">
+      <div class="nav-wrapper">
+        <!-- Logo Section -->
+        <div class="logo-section">
+          <h1 class="logo" routerLink="/">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-user">user</span>
+            <span class="terminal-separator">&#64;</span>
+            <span class="terminal-host">{{logoTitle}}</span>
+          </h1>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="menu-section">
+          <ul class="nav-links">
+            <li *ngFor="let item of menuItems">
+              <a [ngClass]="{'active': selectedNavItem === item.route}"
+                 (click)="selectNavItem(item.route)"
+                 class="nav-link">
+                <span class="terminal-prompt">&gt;</span>
+                <!-- <span class="material-icons icon">
+                  {{ getIconForItem(item.name) }}
+                </span> -->
+                <span class="nav-text">{{item.name}}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mobile Menu Trigger -->
+        <button class="mobile-menu-trigger" (click)="openNav()">
+          <span class="material-icons">terminal</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay terminal-overlay" [ngClass]="{'active': isNavOpen}" id="myNav">
+    <div class="mobile-nav-header">
+      <h2 class="logo">
+        <span class="terminal-prompt">$</span>
+        <span class="terminal-user">user</span>
+        <span class="terminal-separator">@</span>
+        <span class="terminal-host">{{logoTitle}}</span>
+      </h2>
+      <button class="close-nav" (click)="closeNav()">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+
+    <div class="mobile-nav-content">
+      <a *ngFor="let item of menuItems"
+         [ngClass]="{'active': selectedNavItem === item.route}"
+         (click)="selectNavItem(item.route)"
+         class="mobile-nav-link">
+        <span class="terminal-prompt">&gt;</span>
+        <!-- <span class="material-icons icon">
+          {{ getIconForItem(item.name) }}
+        </span> -->
+        <span>{{item.name}}</span>
+      </a>
+    </div>
+  </div>
+</header>

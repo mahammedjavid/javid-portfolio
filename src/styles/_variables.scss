@@ -1,0 +1,150 @@
+$primary_one : #01080E;
+$primary_two : #011627;
+$primary-three : #011221;
+$secondary_one : #607B96;
+$secondary_two : #3C9D93;
+$secondary_three : #4D5BCE;
+$secondary_four : #FFFFFF;
+$secondary_five : #5565E8;
+$accent_one : #FEA55F;
+$accent_two : #43D9AD;
+$accent_three : #E99287;
+$accent_four : #C98BDF;
+$lines : #1E2D3D;
+$gradient_one : #4D5BCE;
+$gradient_two : #43D9AD;
+$gradient_three : #1C2B3A;
+$github-dark: #0d1117;
+$github-darker: #010409;
+$github-light: #c9d1d9;
+$github-blue: #58a6ff;
+$github-header: #161b22;
+$github-border: #30363d;
+$github-hover: #1f6feb;
+$terminal-bg: #1e1e1e;
+$terminal-text: #90ff90;
+$terminal-prompt: #90ff90;
+$terminal-user: #ff9900;
+$terminal-host: #00ffff;
+$terminal-separator: #ffffff;
+$terminal-hover: rgba(0, 255, 0, 0.1);
+$header-height: 62px;
+$header-bg: var(--bg-primary);
+$border-color: var(--border-primary);
+$text-color: var(--text-primary);
+$hover-bg: var(--bg-hover);
+
+// Enhanced theme colors
+$theme-colors: (
+  background: (
+    primary: #0d1117,
+    secondary: #161b22,
+    tertiary: #21262d
+  ),
+  accent: (
+    primary: #58a6ff,
+    secondary: #238636,
+    tertiary: #7ee787
+  ),
+  text: (
+    primary: #c9d1d9,
+    secondary: #8b949e,
+    tertiary: #6e7681
+  ),
+  syntax: (
+    keyword: #ff7b72,
+    string: #a5d6ff,
+    function: #d2a8ff,
+    variable: #ffa657
+  )
+) !default;
+
+// VS Code Theme Colors
+$vscode-bg: #1e1e1e;
+$vscode-dark: #1a1a1a;
+$vscode-darker: #151515;
+$vscode-header: #2d2d2d;
+$vscode-sidebar: #252526;
+$vscode-border: #404040;
+
+// VS Code Syntax Colors
+$vscode-blue: #569cd6;      // Keywords, Functions
+$vscode-light-blue: #9cdcfe; // Variables
+$vscode-cyan: #4ec9b0;      // Classes, Types
+$vscode-green: #6a9955;     // Comments
+$vscode-orange: #ce9178;    // Strings
+$vscode-yellow: #dcdcaa;    // Function calls
+$vscode-purple: #c586c0;    // Control keywords
+$vscode-red: #f44747;       // Errors
+$vscode-white: #d4d4d4;     // Default text
+
+// VS Code UI Colors
+$vscode-highlight: rgba(86, 156, 214, 0.1);
+$vscode-active: rgba(86, 156, 214, 0.2);
+$vscode-selection: rgba(86, 156, 214, 0.3);
+$vscode-hover: rgba(86, 156, 214, 0.05);
+
+// Terminal Colors
+$terminal-bg: $vscode-bg;
+$terminal-header-bg: $vscode-header;
+$terminal-text: $vscode-white;
+$terminal-prompt: $vscode-blue;
+$terminal-user: $vscode-cyan;
+$terminal-host: $vscode-orange;
+$terminal-separator: #808080;
+$terminal-hover: $vscode-highlight;
+$terminal-active: $vscode-active;
+$terminal-border: $vscode-border;
+
+// Azure DevOps Colors
+$azure-blue: #0078d4;
+$azure-light-blue: #50e6ff;
+$azure-cyan: #00b7c3;
+$azure-green: #107c10;
+$azure-purple: #5c2d91;
+$azure-orange: #d83b01;
+$azure-red: #e81123;
+
+// Semantic Colors
+$color-info: $vscode-blue;
+$color-success: $vscode-cyan;
+$color-warning: $vscode-orange;
+$color-error: $vscode-red;
+$color-debug: $vscode-purple;
+
+// Component Specific
+$footer-height: 50px;
+$sidebar-width: 240px;
+$border-radius: 4px;
+
+// Z-index Layers
+$z-header: 1000;
+$z-footer: 1000;
+$z-modal: 2000;
+$z-overlay: 1500;
+$z-dropdown: 1200;
+$z-tooltip: 1300;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+$shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Add these VS Code theme variables
+$vscode-text: #d4d4d4;
+$vscode-purple: #c586c0;
+$vscode-orange: #ce9178;
+$vscode-white: #d4d4d4;
+$vscode-highlight: rgba(86, 156, 214, 0.1);

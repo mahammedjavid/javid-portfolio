@@ -1,0 +1,151 @@
+@import '../../../../styles/variables';
+.light_text {
+    color: $secondary_one;
+    font-size: 18px;
+  }
+  .send_message {
+    background-color: $gradient_three;
+    color: $secondary_four;
+  }
+  .purple {
+    color: $accent_four;
+  }
+  .pink {
+    color: $secondary_five;
+  }
+  .orange {
+    color: $accent_one;
+  }
+  @media (max-width: 670px) {
+    span {
+      font-size: 14px;
+    }
+    p {
+      font-size: 14px;
+    }
+    .light_text{
+      font-size: 14px;
+    }
+  }
+
+.terminal-window {
+    background: #1e1e1e;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    // margin: 20px;
+    overflow: hidden;
+    
+    .terminal-header {
+        background: #2d2d2d;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        
+        .terminal-buttons {
+            display: flex;
+            gap: 8px;
+            margin-right: 15px;
+            
+            span {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                
+                &.close { background: #ff5f56; }
+                &.minimize { background: #ffbd2e; }
+                &.maximize { background: #27c93f; }
+            }
+        }
+        
+        .terminal-title {
+            color: #999;
+            font-size: 14px;
+            font-family: 'SF Mono', monospace;
+        }
+    }
+    
+    .terminal-body {
+        padding: 20px;
+        font-family: 'SF Mono', monospace;
+        color: #fff;
+        
+        .command-line {
+            display: flex;
+            gap: 8px;
+            margin: 15px 0;
+            
+            .prompt { color: #27c93f; }
+            .directory { color: #3e9eda; }
+            .git-branch { color: #ff5f56; }
+            .command { color: #fff; }
+        }
+        
+        .output-block {
+            background: #282c34;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 10px 0;
+            
+            .markdown-content {
+                .role-title {
+                    color: #61afef;
+                    font-size: 1.2em;
+                    margin-bottom: 5px;
+                }
+                
+                .duration {
+                    color: #98c379;
+                    font-size: 0.9em;
+                    margin-bottom: 10px;
+                }
+                
+                .achievements {
+                    list-style: none;
+                    padding-left: 0;
+                    
+                    li {
+                        color: #abb2bf;
+                        margin: 5px 0;
+                        padding-left: 20px;
+                        position: relative;
+                        
+                        &:before {
+                            content: "→";
+                            position: absolute;
+                            left: 0;
+                            color: #c678dd;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .code-block {
+            background: #282c34;
+            border-radius: 4px;
+            padding: 15px;
+            
+            pre {
+                margin: 0;
+                code {
+                    .comment { color: #7f848e; }
+                    .keyword { color: #c678dd; }
+                    .string { color: #98c379; }
+                    .variable { color: #e06c75; }
+                    .property { color: #e5c07b; }
+                    .punctuation { color: #abb2bf; }
+                    .operator { color: #56b6c2; }
+                }
+            }
+        }
+    }
+}
+
+.blink {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

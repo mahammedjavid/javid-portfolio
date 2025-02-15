@@ -1,0 +1,794 @@
+@import "../../../styles/variables";
+
+// VS Code theme colors
+$vscode-bg: #1e1e1e;
+$vscode-sidebar-bg: #252526;
+$vscode-selected: #37373d;
+$vscode-hover: #2a2d2e;
+$vscode-border: #3c3c3c;
+$vscode-text: #cccccc;
+$vscode-active-border: #007acc;
+
+.about-section {
+  max-width: 1248px;
+  margin: 0 auto;
+  display: flex;
+  background-color: var(--bg-primary);
+  color: $vscode-text;
+  .sidebar {
+    padding-top: 20px;
+    min-width: 217px;
+    background: var(--bg-primary);
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid $lines;
+    ul > li {
+      cursor: pointer;
+    }
+    .accordion {
+      border: none !important;
+      background-color: var(--bg-primary) !important;
+      .accordion-body{
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+      }
+      .accordion-header {
+        border-radius: 0 !important;
+        border: none !important;
+        background-color: var(--bg-primary) !important;
+        .accordion-button {
+          border-radius: 0 !important;
+          border: none !important;
+          color: $secondary_four !important;
+          background-color: var(--bg-primary) !important;
+        }
+      }
+      .accordion-item {
+        border: none !important;
+        border-radius: 0 !important;
+        background-color: var(--bg-primary) !important;
+      }
+    }
+    .project_title {
+      border-bottom: 1px solid $lines;
+      color: $secondary_five;
+    }
+    .sidebar-header {
+      padding: 10px 16px;
+      background: var(--bg-primary);
+      border-bottom: 1px solid $vscode-border;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .header-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #cccccc;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+
+        i {
+          font-size: 14px;
+          color: #007acc;
+        }
+      }
+
+      .header-actions {
+        .action-button {
+          background: none;
+          border: none;
+          color: #cccccc;
+          padding: 4px 8px;
+          cursor: pointer;
+          border-radius: 4px;
+
+          &:hover {
+            background: $vscode-hover;
+          }
+        }
+      }
+    }
+
+    .search-container {
+      padding: 8px 12px;
+      border-bottom: 1px solid $vscode-border;
+
+      .search-box {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: $vscode-bg;
+        border: 1px solid $vscode-border;
+        border-radius: 4px;
+        padding: 4px 8px;
+
+        i {
+          color: #cccccc;
+          font-size: 12px;
+        }
+
+        input {
+          background: none;
+          border: none;
+          color: #cccccc;
+          font-size: 12px;
+          width: 100%;
+          outline: none;
+
+          &::placeholder {
+            color: #6c6c6c;
+          }
+        }
+      }
+    }
+
+    .accordion {
+      .accordion-button {
+        padding: 6px 12px;
+        font-size: 13px;
+
+        .folder-content {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          i {
+            font-size: 14px;
+            
+            &.fa-folder, &.fa-folder-open {
+              color: #dcb67a;
+            }
+          }
+        }
+
+        &:hover {
+          background: $vscode-hover;
+        }
+      }
+
+      .file-list {
+        padding-left: 28px;
+        
+        li {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          padding: 4px 8px;
+          font-size: 13px;
+          color: #cccccc;
+          cursor: pointer;
+          border-radius: 4px;
+
+          i {
+            font-size: 14px;
+            color: #519aba;
+          }
+
+          &:hover {
+            background: $vscode-hover;
+          }
+
+          &.active {
+            background: $vscode-selected;
+          }
+        }
+      }
+    }
+  }
+  .accordion-button[aria-expanded="true"] .rotate {
+    transition: transform 0.2s ease-out;
+    transform: rotate(90deg);
+  }
+  .accordion-button[aria-expanded="false"] .rotate {
+    transition: transform 0.2s ease-out;
+    transform: rotate(0deg);
+  }
+  .accordion-button::after {
+    display: none !important;
+  }
+  .accordion-button {
+    box-shadow: none !important;
+  }
+  //   .contact-form{
+  //     padding-top: 3.5rem
+  //   }
+  //   .thankyou{
+  //     display: flex;
+  //     flex-direction: column;
+  //     align-items: center;
+  //     justify-content: center;.
+  .code {
+    border: 1px solid $lines;
+    border-radius: 15px;
+    background-color: var(--bg-primary);
+  }
+}
+
+.active {
+  color: $accent_one !important;
+}
+.light_text {
+  color: $secondary_one;
+}
+.send_message {
+  background-color: $gradient_three;
+  color: $secondary_four;
+}
+.purple {
+  color: $accent_four;
+}
+.pink {
+  color: $secondary_five;
+}
+.orange {
+  color: $accent_one;
+}
+@media (max-width: 1270px) {
+  .about-section {
+    .about_section {
+      height: auto !important;
+      overflow: visible !important;
+    }
+    .second_section {
+      display: block !important;
+      .underline {
+        border-bottom: 1px solid $lines;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+@media (max-width: 907px) {
+  span {
+    font-size: 14px;
+  }
+  p {
+    font-size: 14px;
+  }
+  label {
+    font-size: 14px;
+  }
+  li {
+    font-size: 14px;
+  }
+}
+@media (max-width: 764px) {
+  .small_for_mob {
+    font-size: 10px;
+  }
+}
+// @media (max-width: 760px) {
+//   .about-section {
+//     flex-direction: column;
+//     .project_title {
+//       text-align: left !important;
+//     }
+//     .sidebar {
+//       padding: 3.5rem !important;
+//       padding-bottom: 0 !important;
+//       align-items: flex-start !important;
+//       background: none;
+//       border: none;
+//     }
+//     .second_section {
+//       padding-top: 0 !important;
+//       padding-bottom: 0 !important;
+//       .coding {
+//         padding-top: 3.5rem !important;
+//       }
+//       .form-control {
+//         width: 100% !important;
+//       }
+//     }
+//   }
+//   .project_title {
+//     border: none !important;
+//   }
+// }
+@media (max-width: 650px) {
+  .about-section {
+    flex-direction: column;
+    .sidebar {
+      background-color: var(--bg-primary) !important;
+      .accordion {
+        background-color: var(--bg-primary) !important;
+        .accordion-header {
+          background-color: var(--bg-primary) !important;
+          .accordion-button {
+            background-color: var(--bg-primary) !important;
+            li {
+              background-color: var(--bg-primary) !important;
+            }
+          }
+        }
+        .accordion-item {
+          background-color: var(--bg-primary) !important;
+        }
+      }
+    }
+    .second_section {
+      padding-right: 14px !important;
+      padding-left: 14px !important;
+    }
+  }
+}
+@media (max-width: 458px) {
+  span {
+    font-size: 12px;
+  }
+  p {
+    font-size: 12px;
+  }
+  li {
+    font-size: 12px;
+  }
+  .coding {
+    white-space: normal !important;
+  }
+}
+.about_section::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+.about_section::-webkit-scrollbar-track {
+  background-color: $lines;
+}
+
+.about_section::-webkit-scrollbar-thumb {
+  background-color: $secondary_one;
+}
+.file_name {
+  font-weight: 200 !important;
+}
+
+.vscode-sidebar {
+  background-color: $vscode-sidebar-bg;
+  border-right: 1px solid $vscode-border;
+  
+  .explorer-header {
+    padding: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #808080;
+  }
+}
+
+.custom-accordion {
+  .accordion-item {
+    background: transparent;
+    border: none;
+    
+    .vscode-folder {
+      background: transparent;
+      border: none;
+      padding: 4px 16px;
+      color: $vscode-text;
+      
+      &:hover {
+        background-color: $vscode-hover;
+      }
+      
+      &:not(.collapsed) {
+        background-color: $vscode-selected;
+      }
+    }
+  }
+  
+  .folder-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    .folder-icon {
+      width: 16px;
+      height: 16px;
+      background-image: url('data:image/svg+xml;utf8,<svg>...</svg>');
+      
+      &.opened {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    display: flex;
+    align-items: center;
+    padding: 4px 16px 4px 32px;
+    cursor: pointer;
+    gap: 8px;
+    color: $secondary_one;
+    
+    &:hover {
+      background-color: $vscode-hover;
+    }
+    
+    &.active {
+      background-color: $vscode-selected;
+    }
+    
+    .file-icon {
+      font-size: 16px;
+      color: #519aba;
+    }
+  }
+}
+
+.content-area {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--bg-primary);
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+  
+  .main-content {
+    color: $secondary_one;
+    width: 100%;
+    
+    h1, h2, h3, h4, h5, h6 {
+      color: $accent_four;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+.code-snippets-section {
+  width: 100%;
+  
+  .terminal-body {
+    .terminal-line {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+      color: #fff;
+      white-space: nowrap;
+      
+      .prompt {
+        color: #27c93f;
+      }
+      
+      .directory {
+        color: #3e9eda;
+      }
+      
+      .git-branch {
+        color: #ff5f56;
+      }
+      
+      .command {
+        color: #ddd;
+      }
+      
+      .blink {
+        animation: blink 1s step-end infinite;
+      }
+    }
+    
+    .code-block {
+      background: #282c34;
+      border-radius: 4px;
+      padding: 15px;
+      margin: 10px 0 20px;
+      
+      pre {
+        margin: 0;
+        code {
+          .keyword { color: #c678dd; }
+          .function-name { color: #61afef; }
+          .variable { color: #e06c75; }
+          .property { color: #e5c07b; }
+          .method { color: #98c379; }
+          .parameter { color: #d19a66; }
+          .punctuation { color: #abb2bf; }
+          .operator { color: #56b6c2; }
+        }
+      }
+    }
+  }
+}
+
+// Media queries for responsiveness
+@media (max-width: 1200px) {
+  .content-area {
+    flex-direction: column;
+    overflow: auto;
+    
+    .code-snippets-section {
+      width: 100%;
+      min-width: unset;
+      height: 500px;
+    }
+    
+    .terminal-window {
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    padding: 10px;
+  }
+  
+  .code-snippets-section {
+    height: 400px !important;
+  }
+}
+
+// Add these new styles
+.chevron-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+  color: $secondary_one;
+  
+  &.opened {
+    transform: rotate(-180deg);
+  }
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.folder-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  .folder-type {
+    color: #dcb862; // VS Code folder icon color
+    font-size: 18px;
+  }
+  
+  span {
+    color: $secondary_one;
+  }
+}
+
+// Update the vscode-folder button styles
+.vscode-folder {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 4px 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: $vscode-hover;
+  }
+  
+  &:not(.collapsed) {
+    background-color: $vscode-selected;
+  }
+}
+
+// Remove any conflicting styles
+.accordion-button::after {
+  display: none !important;
+}
+
+.rotate {
+  display: none; // Remove old rotation logic
+}
+
+// Add these new styles for the terminal theme
+.terminal-window {
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  .terminal-header {
+    background: #2d2d2d;
+    border-radius: 6px 6px 0 0;
+    padding: 10px;
+    position: relative;
+    flex-shrink: 0;
+    
+    .terminal-buttons {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 6px;
+      
+      .terminal-button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        
+        &.close { background-color: #ff5f56; }
+        &.minimize { background-color: #ffbd2e; }
+        &.zoom { background-color: #27c93f; }
+      }
+    }
+    
+    .terminal-title {
+      color: #999;
+      text-align: center;
+      font-size: 14px;
+      font-family: 'SF Mono', monospace;
+    }
+  }
+  
+  .terminal-body {
+    padding: 20px;
+    font-family: 'SF Mono', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    flex: 1;
+    overflow: auto;
+    
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: #1e1e1e;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: #3e3e3e;
+      border-radius: 4px;
+      
+      &:hover {
+        background: #4e4e4e;
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.terminal-content {
+  padding: 20px;
+  font-family: 'SF Mono', monospace;
+  
+  .terminal-line {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: #fff;
+    
+    .prompt {
+      color: #27c93f;
+    }
+    
+    .directory {
+      color: #3e9eda;
+    }
+    
+    .git-branch {
+      color: #ff5f56;
+    }
+  }
+  
+  .code-content {
+    background: #282c34;
+    border-radius: 6px;
+    padding: 20px;
+    
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      
+      code {
+        .comment { color: #7f848e; }
+        .keyword { color: #c678dd; }
+        .string { color: #98c379; }
+        .variable { color: #e06c75; }
+        .property { color: #e5c07b; }
+        .punctuation { color: #abb2bf; }
+        .operator { color: #56b6c2; }
+      }
+    }
+  }
+}
+
+// Add these styles for mobile tabs
+.mobile-tabs {
+    display: none;
+    width: 100%;
+    background: #1e1e1e;
+    padding: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .tabs-container {
+        display: flex;
+        gap: 10px;
+        min-width: min-content;
+        
+        .tab {
+            padding: 8px 16px;
+            background: #2d2d2d;
+            border-radius: 20px;
+            color: #999;
+            font-size: 14px;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid #3c3c3c;
+            
+            &.active {
+                background: #007acc;
+                color: #fff;
+                border-color: #007acc;
+            }
+            
+            i {
+                margin-right: 6px;
+                font-size: 16px;
+                vertical-align: text-bottom;
+            }
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .about-section {
+        flex-direction: column;
+        
+        .sidebar {
+            display: none;
+        }
+        
+    }
+    .mobile-tabs {
+      display: block;
+      position: sticky;
+      bottom: 2px;
+      z-index: 100;
+  }
+  
+  .content-area {
+      padding: 10px;
+  }
+}

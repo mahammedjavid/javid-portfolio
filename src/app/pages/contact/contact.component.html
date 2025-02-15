@@ -1,0 +1,92 @@
+<div class="main-container">
+    <div class="terminal-window contact-section " [@fadeInOut]>
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+            </div>
+            <div class="terminal-title">javid&#64;macbook-pro: ~/contact</div>
+        </div>
+    
+        <div class="terminal-body">
+            <div *ngIf="!messageSent">
+                <div class="command-line">
+                    <span class="prompt">➜</span>
+                    <span class="directory">~/contact</span>
+                    <span class="git-branch">(main)</span>
+                    <span class="command">cat contact-info.md</span>
+                </div>
+    
+                <div class="output-block">
+                    <div class="contact-info-header">
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <span class="contact-text">+91 9964194276</span>
+                        </div>
+    
+                        <div class="contact-item">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <a href="mailto:javid.connect&#64;gmail.com" class="contact-text">
+                                javid.connect&#64;gmail.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="command-line">
+                    <span class="prompt">➜</span>
+                    <span class="directory">~/contact</span>
+                    <span class="git-branch">(main)</span>
+                    <span class="command">vim message.ts</span>
+                </div>
+    
+                <div class="form-container">
+                    <form #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm)">
+                        <div class="form-group">
+                            <input type="text" name="name" [(ngModel)]="contactFormData.name" placeholder="Name" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <input type="email" name="email" [(ngModel)]="contactFormData.email" placeholder="Email" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <textarea name="message" [(ngModel)]="contactFormData.message" placeholder="Message"
+                                required></textarea>
+                        </div>
+    
+                        <button type="submit" [disabled]="!contactForm.valid">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+    
+            <div *ngIf="messageSent" class="success-message">
+                <div class="output-block">
+                    <div class="markdown-content">
+                        <h2>Message Sent Successfully! 🎉</h2>
+                        <p>Thank you for reaching out. I'll get back to you soon.</p>
+                        <button class="send-again-btn" (click)="sendMessageAgain()">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Another Message
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="command-line">
+                <span class="prompt">➜</span>
+                <span class="directory">~/contact</span>
+                <span class="git-branch">(main)</span>
+                <span class="blink">█</span>
+            </div>
+        </div>
+    </div>
+</div>

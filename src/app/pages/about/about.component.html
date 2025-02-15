@@ -1,0 +1,353 @@
+<div class="about-section" [@fadeInOut]>
+    <div class="sidebar vscode-sidebar">
+        <!-- Add VSCode-style Header -->
+        <div class="sidebar-header">
+            <div class="header-title">
+                <i class="fas fa-user-circle"></i>
+                <span>About Me</span>
+            </div>
+            <!-- <div class="header-actions">
+                <button class="action-button">
+                    <i class="fas fa-ellipsis-h"></i>
+                </button>
+            </div> -->
+        </div>
+
+        <!-- Add Search Bar -->
+        <!-- <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search..." />
+            </div>
+        </div> -->
+
+        <div class="accordion custom-accordion" id="aboutAccordion">
+            <!-- Bio Section -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button vscode-folder" 
+                            [class.collapsed]="!dynamicFolderOpen.bio" 
+                            type="button" 
+                            (click)="toggleFolder('bio')"
+                            [attr.aria-expanded]="dynamicFolderOpen.bio">
+                        <div class="folder-content">
+                            <i class="chevron-icon" [class.opened]="dynamicFolderOpen.bio">
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <path fill="currentColor" d="M6.35355339,4.35355339 L11.1464466,9.14644661 L10.4393398,9.85355339 L6,5.41421356 L1.56066017,9.85355339 L0.853553391,9.14644661 L5.64644661,4.35355339 C5.84170876,4.15829124 6.15829124,4.15829124 6.35355339,4.35355339 Z" />
+                                </svg>
+                            </i>
+                            <i class="fas fa-folder" [class.fa-folder-open]="dynamicFolderOpen.bio"></i>
+                            <span>Bio</span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" 
+                     [ngClass]="{ show: dynamicFolderOpen.bio }">
+                    <div class="accordion-body">
+                        <ul class="file-list">
+                            <li [ngClass]="{ active: selectedSubNavItem == 'personal-info' }"
+                                (click)="selectNavItem('personal-info')">
+                                <i class="material-icons file-icon">description</i>
+                                personal.ts
+                            </li>
+                            <li [ngClass]="{ active: selectedSubNavItem == 'summary' }"
+                                (click)="selectNavItem('summary')">
+                                <i class="material-icons file-icon">description</i>
+                                summary.ts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- fourth item -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button vscode-folder" 
+                            [class.collapsed]="!dynamicFolderOpen.experience" 
+                            type="button" 
+                            (click)="toggleFolder('experience')"
+                            [attr.aria-expanded]="dynamicFolderOpen.experience">
+                        <div class="folder-content">
+                            <i class="chevron-icon" [class.opened]="dynamicFolderOpen.experience">
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <path fill="currentColor" d="M6.35355339,4.35355339 L11.1464466,9.14644661 L10.4393398,9.85355339 L6,5.41421356 L1.56066017,9.85355339 L0.853553391,9.14644661 L5.64644661,4.35355339 C5.84170876,4.15829124 6.15829124,4.15829124 6.35355339,4.35355339 Z" />
+                                </svg>
+                            </i>
+                            <i class="fas fa-folder" [class.fa-folder-open]="dynamicFolderOpen.experience"></i>
+                            <span>Experience</span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" 
+                     [ngClass]="{ show: dynamicFolderOpen.experience }">
+                    <div class="accordion-body">
+                        <ul class="file-list">
+                            <li [ngClass]="{ active: selectedSubNavItem == 'experience' }"
+                                (click)="selectNavItem('experience')">
+                                <i class="material-icons file-icon">description</i>
+                                experience.ts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- second item -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button vscode-folder" 
+                            [class.collapsed]="!dynamicFolderOpen.achivement" 
+                            type="button" 
+                            (click)="toggleFolder('achivement')"
+                            [attr.aria-expanded]="dynamicFolderOpen.achivement">
+                        <div class="folder-content">
+                            <i class="chevron-icon" [class.opened]="dynamicFolderOpen.achivement">
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <path fill="currentColor" d="M6.35355339,4.35355339 L11.1464466,9.14644661 L10.4393398,9.85355339 L6,5.41421356 L1.56066017,9.85355339 L0.853553391,9.14644661 L5.64644661,4.35355339 C5.84170876,4.15829124 6.15829124,4.15829124 6.35355339,4.35355339 Z" />
+                                </svg>
+                            </i>
+                            <i class="fas fa-folder" [class.fa-folder-open]="dynamicFolderOpen.achivement"></i>
+                            <span>Achivements</span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" 
+                     [ngClass]="{ 'show': dynamicFolderOpen.achivement }">
+                    <div class="accordion-body">
+                        <ul class="file-list">
+                            <li [ngClass]="{ active: selectedSubNavItem == 'achivement' }"
+                                (click)="selectNavItem('achivement')">
+                                <i class="material-icons file-icon">description</i>
+                                achivement.ts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- third item -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button vscode-folder" 
+                            [class.collapsed]="!dynamicFolderOpen.interest" 
+                            type="button" 
+                            (click)="toggleFolder('interest')"
+                            [attr.aria-expanded]="dynamicFolderOpen.interest">
+                        <div class="folder-content">
+                            <i class="chevron-icon" [class.opened]="dynamicFolderOpen.interest">
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <path fill="currentColor" d="M6.35355339,4.35355339 L11.1464466,9.14644661 L10.4393398,9.85355339 L6,5.41421356 L1.56066017,9.85355339 L0.853553391,9.14644661 L5.64644661,4.35355339 C5.84170876,4.15829124 6.15829124,4.15829124 6.35355339,4.35355339 Z" />
+                                </svg>
+                            </i>
+                            <i class="fas fa-folder" [class.fa-folder-open]="dynamicFolderOpen.interest"></i>
+                            <span>Interest</span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" 
+                     [ngClass]="{ 'show': dynamicFolderOpen.interest }">
+                    <div class="accordion-body">
+                        <ul class="file-list">
+                            <li [ngClass]="{ active: selectedSubNavItem == 'interest' }"
+                                (click)="selectNavItem('interest')">
+                                <i class="material-icons file-icon">description</i>
+                                interest.ts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- fourth item -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button vscode-folder" 
+                            [class.collapsed]="!dynamicFolderOpen.education" 
+                            type="button" 
+                            (click)="toggleFolder('education')"
+                            [attr.aria-expanded]="dynamicFolderOpen.education">
+                        <div class="folder-content">
+                            <i class="chevron-icon" [class.opened]="dynamicFolderOpen.education">
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <path fill="currentColor" d="M6.35355339,4.35355339 L11.1464466,9.14644661 L10.4393398,9.85355339 L6,5.41421356 L1.56066017,9.85355339 L0.853553391,9.14644661 L5.64644661,4.35355339 C5.84170876,4.15829124 6.15829124,4.15829124 6.35355339,4.35355339 Z" />
+                                </svg>
+                            </i>
+                            <i class="fas fa-folder" [class.fa-folder-open]="dynamicFolderOpen.education"></i>
+                            <span>Education</span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" 
+                     [ngClass]="{ 'show': dynamicFolderOpen.education }">
+                    <div class="accordion-body">
+                        <ul class="file-list">
+                            <li [ngClass]="{ active: selectedSubNavItem == 'education' }"
+                                (click)="selectNavItem('education')">
+                                <i class="material-icons file-icon">description</i>
+                                education.ts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- sixth item -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button vscode-folder" 
+                            [class.collapsed]="!dynamicFolderOpen.skills" 
+                            type="button" 
+                            (click)="toggleFolder('skills')"
+                            [attr.aria-expanded]="dynamicFolderOpen.skills">
+                        <div class="folder-content">
+                            <i class="chevron-icon" [class.opened]="dynamicFolderOpen.skills">
+                                <svg width="16" height="16" viewBox="0 0 16 16">
+                                    <path fill="currentColor" d="M6.35355339,4.35355339 L11.1464466,9.14644661 L10.4393398,9.85355339 L6,5.41421356 L1.56066017,9.85355339 L0.853553391,9.14644661 L5.64644661,4.35355339 C5.84170876,4.15829124 6.15829124,4.15829124 6.35355339,4.35355339 Z" />
+                                </svg>
+                            </i>
+                            <i class="fas fa-folder" [class.fa-folder-open]="dynamicFolderOpen.skills"></i>
+                            <span>Skills</span>
+                        </div>
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" 
+                     [ngClass]="{ 'show': dynamicFolderOpen.skills }">
+                    <div class="accordion-body">
+                        <ul class="file-list">
+                            <li [ngClass]="{ active: selectedSubNavItem == 'skills' }"
+                                (click)="selectNavItem('skills')">
+                                <i class="material-icons file-icon">description</i>
+                                skills.ts
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-area">
+        <!-- <div class="terminal-window editor-terminal"> -->
+            <!-- <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-button close"></span>
+                    <span class="terminal-button minimize"></span>
+                    <span class="terminal-button zoom"></span>
+                </div>
+                <div class="terminal-title">~/about-me/current-file.ts</div>
+            </div> -->
+            
+            <div class=" main-content">
+                <router-outlet></router-outlet>
+            </div>
+        <!-- </div> -->
+        
+        <!-- <div class="code-snippets-section">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-button close"></span>
+                        <span class="terminal-button minimize"></span>
+                        <span class="terminal-button zoom"></span>
+                    </div>
+                    <div class="terminal-title">bash ~ /code-snippets</div>
+                </div>
+                
+                <div class="terminal-body">
+                    
+                    <div class="terminal-line">
+                        <span class="prompt">➜</span>
+                        <span class="directory">~/code-snippets</span>
+                        <span class="git-branch">(main)</span>
+                        <span class="command">cat function1.ts</span>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>
+<span class="keyword">function</span> <span class="function-name">{{DummyFunctionName}}</span><span class="punctuation">()</span> <span class="punctuation">{{ '{' }}</span>
+    <span class="keyword">const</span> <span class="variable">{{DummyFunctionName}}</span> <span class="operator">=</span> <span class="method">this.apiService.{{DummyFunctionName}}</span><span class="punctuation">();</span>
+<span class="punctuation">{{ '}' }}</span>
+                        </code></pre>
+                    </div>
+
+                    
+                    <div class="terminal-line">
+                        <span class="prompt">➜</span>
+                        <span class="directory">~/code-snippets</span>
+                        <span class="git-branch">(main)</span>
+                        <span class="command">cat generateResume.ts</span>
+                    </div>
+                    
+                    <div class="code-block">
+                        <pre><code>
+<span class="keyword">function</span> <span class="function-name">generateResume</span><span class="punctuation">(</span><span class="parameter">{{DummyFunctionName}}</span><span class="punctuation">)</span> <span class="punctuation">{{ '{' }}</span>
+    <span class="keyword">const</span> <span class="variable">user</span> <span class="operator">=</span> <span class="punctuation">{{ '{' }}</span>
+        <span class="property">about</span><span class="punctuation">:</span> <span class="punctuation">[]</span>
+    <span class="punctuation">{{ '}' }}</span>;
+
+    <span class="variable">user</span><span class="punctuation">.</span><span class="property">about</span><span class="punctuation">.</span><span class="method">push</span><span class="punctuation">(</span><span class="parameter">{{DummyFunctionName}}</span><span class="punctuation">);</span>
+    <span class="keyword">return</span> <span class="variable">user</span><span class="punctuation">.</span><span class="property">about</span><span class="punctuation">;</span>
+<span class="punctuation">{{ '}' }}</span>
+                        </code></pre>
+                    </div>
+
+                    <div class="terminal-line">
+                        <span class="prompt">➜</span>
+                        <span class="directory">~/code-snippets</span>
+                        <span class="git-branch">(main)</span>
+                        <span class="blink">█</span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+<!-- Add this after the sidebar section -->
+<div class="mobile-tabs">
+    <div class="tabs-container">
+        <div class="tab" 
+             [ngClass]="{ active: selectedSubNavItem == 'personal-info' }"
+             (click)="selectNavItem('personal-info')">
+            <i class="material-icons">person</i>
+            Info
+        </div>
+        <div class="tab" 
+             [ngClass]="{ active: selectedSubNavItem == 'summary' }"
+             (click)="selectNavItem('summary')">
+            <i class="material-icons">description</i>
+            Summary
+        </div>
+        <div class="tab" 
+             [ngClass]="{ active: selectedSubNavItem == 'experience' }"
+             (click)="selectNavItem('experience')">
+            <i class="material-icons">work</i>
+            Experience
+        </div>
+        <div class="tab" 
+             [ngClass]="{ active: selectedSubNavItem == 'education' }"
+             (click)="selectNavItem('education')">
+            <i class="material-icons">school</i>
+            Education
+        </div>
+        <div class="tab" 
+             [ngClass]="{ active: selectedSubNavItem == 'skills' }"
+             (click)="selectNavItem('skills')">
+            <i class="material-icons">code</i>
+            Skills
+        </div>
+        <div class="tab" 
+             [ngClass]="{ active: selectedSubNavItem == 'achivement' }"
+             (click)="selectNavItem('achivement')">
+            <i class="material-icons">emoji_events</i>
+            Awards
+        </div>
+        <div class="tab" 
+             [ngClass]="{ active: selectedSubNavItem == 'interest' }"
+             (click)="selectNavItem('interest')">
+            <i class="material-icons">interests</i>
+            Interests
+        </div>
+    </div>
+</div>
